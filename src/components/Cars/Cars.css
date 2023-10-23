@@ -1,0 +1,9 @@
+
+
+.Cars{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 200px));
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+}

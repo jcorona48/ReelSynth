@@ -1,10 +1,8 @@
-import './Car.css'
+import './Card.css'
 import { parseDuration, limitDescription, parseRating } from '../../utils/parse'
 import { useState } from 'react'
 
-
-
-export default function Car({item}) {
+export default function Card({item}) {
     const [hovered, setHovered] = useState(false)
 
     function handleMouseEnter() {

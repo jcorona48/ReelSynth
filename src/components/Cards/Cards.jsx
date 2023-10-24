@@ -1,13 +1,13 @@
 
-import Car from "./Car"
-import "./Cars.css"
+import Card from "./Card"
+import "./Cards.css"
 import { Link } from "react-router-dom"
-export default function Cars({items}) {
+export default function Cards({items}) {
     return (
         <div className="Cars">
             {items.map((item) => (
                 <Link to={`/movie/${item.title.replace(/ /g, '-')}`} key={item.id} >
-                    <Car key={item.id} item={item}/>
+                    <Card key={item.id} item={item}/>
                 </Link>
             ))}
         </div>

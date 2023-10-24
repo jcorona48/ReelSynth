@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Movies from './pages/Movies'
 import Navbar from './components/Navbar/Navbar'
+import Movie from './pages/Movie'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/movies" element={<Movies />} />
+          <Route path="/movie/:title" element={<Movie />} />
           <Route path="/series" element={<About />} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>

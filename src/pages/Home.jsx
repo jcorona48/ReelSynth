@@ -41,7 +41,7 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
   const [series, setSeries] = useState([]);
   useEffect(() => {
-    if (data && !loading && !error) {
+    if (!loading) {
       setMovies(data.getMovies);
       setSeries(data.getSeries);
     }

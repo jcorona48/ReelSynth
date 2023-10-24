@@ -41,6 +41,7 @@ export default function Navbar() {
             <div className='inputContainer'>
                 <input type="search" placeholder="Search..." className='inputSearch' style={{display: input ? 'flex' : 'none'}}/>
                 <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
+                <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
             </div>
         </nav>
 

@@ -1,7 +1,6 @@
 
 /* Css para el navbar */
 
-
 /*
 Tiene la siguiente estructura.
 
@@ -35,7 +34,6 @@ i{
     transition: all 0.1s ease-in-out;
     color: rgba(255, 255, 255, 0.87);
 }
-
 
 .logo{
     display: flex;
@@ -96,7 +94,7 @@ nav ul li a:hover{
     width: 100%;
     height: 1.5rem;
     border: none;
-    padding-left: 5px;
+    padding-left: 10px;
     outline: none;
     transition: all 0.1s ease-in-out;
     margin-right: 5px;

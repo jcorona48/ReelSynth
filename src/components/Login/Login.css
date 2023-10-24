@@ -21,6 +21,7 @@
 .container {
     background-color: #DAE1E7;
     border-radius: 30px;
+    border: solid #fff;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;

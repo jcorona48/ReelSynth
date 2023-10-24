@@ -1,8 +1,7 @@
 
 import { useParams } from "react-router-dom"
 import { useQuery, gql } from "@apollo/client";
-import { useState, useEffect } from "react";
-
+import useSEO from "../Hooks/useSEO";
 const query = gql`
     query GetMovies($input: inputMovie) {
     getMovies(input: $input) {
@@ -15,14 +14,14 @@ const query = gql`
         year
         imgURL
         genrers {
-        name
+            name
         }
         duration
         studio {
-        name
-        producer {
             name
-        }
+            producer {
+                name
+            }
         }
     }
 }
@@ -30,10 +29,9 @@ const query = gql`
 
 
 export default function Movie(){
-
-    
     const { title } = useParams()
     const titleTransformed = title.replace(/-/g, ' ')
+    useSEO({title: titleTransformed, description: "Movie page"})
     const { data, loading, error } = useQuery(query, {
         variables: {
             input: {
@@ -41,29 +39,15 @@ export default function Movie(){
             }
         }
     })
-
-    const [movie, setMovie] = useState({})
-    const [notFound, setNotFound] = useState(false);
-    useEffect(() => {
-        if (data && !loading && !error) {
-            if (data.getMovies.length === 0) {
-              // No se encontraron películas con ese título
-              setNotFound(true);
-            } else {
-              setMovie(data.getMovies[0]);
-            }
-          }
-    }, [data])
-    
+    const movie = data && data?.getMovies ? data?.getMovies[0] : null;
     return(
         <div>
-            {
-                loading && <h1>Loading...</h1>
-            }
-            {!loading && notFound && <h1>Not Found</h1>}
+            { loading && <h1>Loading...</h1> }
+            { error && <h1>Error...{error.message}</h1> }
+            { data?.getMovies && data?.getMovies.length === 0 && <h1>Not Found</h1>}
 
             {
-                !loading && !notFound && (
+                data?.getMovies && data?.getMovies.length > 0 && (
                     <>
                         <h1>Movie: {movie.title}</h1>
                         <p>Rating: {movie.rating}</p>

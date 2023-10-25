@@ -1,4 +1,4 @@
-import "../PagesCSS/Movie.css"
+import "../components/Movies/Movies"
 import { useParams } from "react-router-dom"
 import { useQuery, gql } from "@apollo/client";
 import useSEO from "../Hooks/useSEO";

@@ -3,15 +3,16 @@ footer {
     text-align: center;
     background-color: #00021d;
     color: #ffff;
-    margin-top: 15px;
     height: 150px;
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .flechaUp {
-    width: 45px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 

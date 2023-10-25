@@ -4,13 +4,11 @@ import { Link } from "react-router-dom";
 export default function FooterPage() {
 
     return(
-        <div>
             <footer>
-                <Link href="#titulo" className="flechaUp" src="./recursos/flecha-hacia-arriba.png"></Link>
+                <Link href="#titulo"> <i className="fas fa-arrow-up flechaUp"></i></Link>
                 <p>&copy; {new Date().getFullYear() } Video JJ | Team Developer</p>
                 <a href="mailto:jeyllomsandoval@gmail.com" className="soport">Contacto</a>
             </footer>
-        </div>
     )
 }
 

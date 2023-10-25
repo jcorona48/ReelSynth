@@ -11,7 +11,6 @@ export default function Card({item}) {
     function handleMouseLeave() {
         setHovered(false)
     }
-    
 
     return (
         <div onMouseLeave={handleMouseLeave} onMouseEnter={handleMouseEnter} className='CarContainer'>

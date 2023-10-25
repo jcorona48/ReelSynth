@@ -9,7 +9,6 @@ const countrys = [
     {name: 'Ecuador', id: crypto.randomUUID()}
 ]
 
-
 export default function SignUp(){
     return(
         <div className="form-container sign-up">
@@ -18,8 +17,8 @@ export default function SignUp(){
                 <span>Completa el formulario</span>
                 <input name="firstName" type="text" placeholder="Nombre" className="input"/>
                 <input name="lastName" type="text" placeholder="Apellido" className="input"/>
-                <select name="countrys" id="" required className="input">
-                    <option value="country" disabled selected>Selecciona tu pais</option>
+                <select name="countrys" id="" required className="input" defaultValue="country">
+                    <option disabled value="country" >Selecciona tu pais</option>
                     {
                         countrys.map((country) => (
                             <option key={country.id} value={country.name}>{country.name}</option>

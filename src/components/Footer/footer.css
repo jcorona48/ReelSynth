@@ -39,7 +39,7 @@ footer {
     cursor: pointer;
     z-index: 99;
     transition: background-color 0.3s;
-    animation: bounce 2s infinite; /* Animación que hace que la flecha suba y baje */
+    animation: bounce 3s infinite ; /* Animación que hace que la flecha suba y baje */
   }
   
   .FlechaUp:hover {

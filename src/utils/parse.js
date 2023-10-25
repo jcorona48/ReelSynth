@@ -49,3 +49,9 @@ export function parseRating(rate){
     return estrellas;
 }
 
+
+export default {
+    parseDuration,
+    limitDescription,
+    parseRating
+}

@@ -1,27 +1,14 @@
 
 import { UserContext } from "../../../Context/userContext"
 import { useContext } from "react"
+import { useMutation, gql } from "@apollo/client"
 
-const userLogin = {
-    role: 'Admin',
-    email: 'joaneliasc86@gmail.com',
-    avatar: 'https://avatars.githubusercontent.com/u/63413974?v=4',
-    token: '1234567890'
-}
+
 
 export default function SignIn(){
-    const {setUser} = useContext(UserContext)
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const form = new FormData(e.target)
-        const data = Object.fromEntries(form)
-        const {userName, password} = data
-        // Usuario logeado correctamente
-        setUser({
-            userName,
-            ...userLogin
-        })
-    }
+    // const {setToken} = useContext(UserContext)
+
+    
     return(
         <div className="form-container sign-in">
             <form onSubmit={handleSubmit} aria-label="Iniciar Sesion">

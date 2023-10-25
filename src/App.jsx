@@ -7,6 +7,7 @@ import Movies from './pages/Movies'
 import Navbar from './components/Navbar/Navbar'
 import Movie from './pages/Movie'
 import LoginPage from './pages/Login'
+import FooterPage from './components/Footer/footer'
 
 
 function App() {
@@ -25,6 +26,9 @@ function App() {
           <Route path="/login" element={ <LoginPage/>} />
           <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
+
+        <FooterPage/>
+
       </BrowserRouter>
 
     </>

@@ -1,0 +1,26 @@
+footer {
+    font-size: 16px;
+    text-align: center;
+    background-color: #00021d;
+    color: #ffff;
+    margin-top: 15px;
+    padding: 20px;
+    height: 150px;
+    width: auto;
+    position: relative;
+    bottom: 0;
+}
+
+.flechaUp {
+    width: 45px;
+    margin-bottom: 10px;
+}
+
+.soport {
+    font-size: 18px;
+}
+
+.soport:link {
+    color: #ffff;
+    text-decoration: none;
+}

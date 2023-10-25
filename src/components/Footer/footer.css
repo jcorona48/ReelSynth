@@ -1,19 +1,18 @@
 footer {
-    font-size: 16px;
-    text-align: center;
+    
     background-color: #00021d;
     color: #ffff;
     height: 150px;
-    width: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
+    flex-direction: column;
     gap: 20px;
+    font-size: 16px;
 }
 
 .flechaUp {
     font-size: 25px;
-    margin-bottom: 10px;
 }
 
 .soport {

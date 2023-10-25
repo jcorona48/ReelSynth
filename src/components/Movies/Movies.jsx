@@ -1,4 +1,4 @@
-
+import "./Movie.css"
 import { useQuery, gql } from "@apollo/client";
 import Cards from "../Cards/Cards.jsx";
 

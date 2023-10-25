@@ -1,15 +1,8 @@
 import './Navbar.css'
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState, useContext, useMemo, useCallback } from 'react';
 import { UserContext } from '../../Context/userContext';
-import { useContext } from 'react';
-const options = [
-    { label: "Home", value: "", icon: "fas fa-regular fa-house" },
-    { label: "Movies", value: "movies", icon: "fas fa-film" },
-    { label: "Series", value: "series", icon: "fas fa-tv" },
-    { label: "About", value: "about", icon: "fas fa-address-card" },
-    { label: "Contact", value: "contact", icon: "fas fa-address-book" },
-];
+
 
 /*
 
@@ -19,10 +12,18 @@ const options = [
 export default function Navbar() {
     const {user, setUser} = useContext(UserContext)
     const [input, setInput] = useState(false);
-    const toggleInput = () => {
-        setInput(!input);
-    }
     
+    const toggleInput = useCallback(() => {
+        setInput((prevInput) => !prevInput);
+      }, []);
+
+    const options = useMemo( () => [
+        { label: "Home", value: "", icon: "fas fa-regular fa-house" },
+        { label: "Movies", value: "movies", icon: "fas fa-film" },
+        { label: "Series", value: "series", icon: "fas fa-tv" },
+        { label: "About", value: "about", icon: "fas fa-address-card" },
+        { label: "Contact", value: "contact", icon: "fas fa-address-book" },
+    ]) ;
     return (
         
         <nav className="navbar">

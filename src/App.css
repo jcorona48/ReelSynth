@@ -11,14 +11,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
     margin-top: 50px;
 }
 
 
 /* Estiliza el scrollbar */
 ::-webkit-scrollbar {
-    width: 12px; /* Ancho del scrollbar */
+    width: 8px; /* Ancho del scrollbar */
     background-color: #002242; /* Color del fondo del scrollbar */
 }
 

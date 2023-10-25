@@ -14,7 +14,7 @@ export default function SignIn(){
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = new FormData(e.target)
-        const data = Object.fromEntries(form.entries())
+        const data = Object.fromEntries(form)
         const {userName, password} = data
         // Usuario logeado correctamente
         setUser({

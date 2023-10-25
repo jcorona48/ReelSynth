@@ -26,12 +26,15 @@ a{
 }
 
 nav{
+    position: fixed;
+    z-index: 100;
     background-color: #00021d;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     padding: 0.5rem 0;
     width: 100%;
+    
 }
 
 i{
@@ -79,6 +82,19 @@ nav ul li a:hover{
     padding-bottom: 3px;
     
 
+}
+
+.navbar-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-item span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .inputContainer{
     display: flex;

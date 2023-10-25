@@ -13,6 +13,8 @@ export default function LoginPage() {
     }, [user, navigate])
     
     return (
-        <Login/>
+        <>
+            <Login/>
+        </>
     )
 }

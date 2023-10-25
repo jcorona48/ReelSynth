@@ -18,15 +18,15 @@ function App() {
         
         <Navbar />
          <main id='body'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/movies" element={<Movies />} />
-            <Route path="/movie/:title" element={<Movie />} />
-            <Route path="/series" element={<About />} />
-            <Route path="/login" element={ <LoginPage/>} />
-            <Route path="*" element={<h1>Not Found</h1>} />
-          </Routes>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/movies" element={<Movies />} />
+              <Route path="/movie/:title" element={<Movie />} />
+              <Route path="/series" element={<About />} />
+              <Route path="/login" element={ <LoginPage/>} />
+              <Route path="*" element={<h1>Not Found</h1>} />
+            </Routes>
         </main>
         <Footer/>
       </BrowserRouter>

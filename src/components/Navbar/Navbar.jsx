@@ -26,13 +26,13 @@ export default function Navbar() {
     return (
         
         <nav className="navbar">
-            <Link to="/"><h1 className='logo'> <i className='fas fa-clapperboard'></i>Video JJ</h1></Link>
+            <Link to="/"><h1 className='logo'> <i className='fas fa-clapperboard'></i> <span>Video JJ</span></h1></Link>
             <ul>
                 {
                 options.map((option) => (
 
                     <li key={option.value}>
-                        <Link to={option.value}> <i className={option.icon}></i> { option.label}</Link>
+                        <Link to={option.value} className='navbar-item'> <i className={option.icon}></i> <span> { option.label} </span></Link>
                     </li>
                 ))
                 }

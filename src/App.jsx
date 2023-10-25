@@ -7,7 +7,7 @@ import Movies from './pages/Movies'
 import Navbar from './components/Navbar/Navbar'
 import Movie from './pages/Movie'
 import LoginPage from './pages/Login'
-import Footer from './components/Footer/Footer'
+import Footer from './components/Footer/footer'
 
 
 function App() {

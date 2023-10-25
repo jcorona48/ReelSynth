@@ -22,6 +22,7 @@ a{
 }
 
 nav{
+    background-color: #00021d;
     display: flex;
     justify-content: flex-start;
     align-items: center;

@@ -1,0 +1,50 @@
+.container-movie * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container-movie {
+    background-color: #ccc;
+    background: linear-gradient(to right, #000e29, #00194b);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    grid-template-columns:repeat(9, 1fr);
+} 
+
+.card-movie {
+    background-color: #00194b;
+    border: solid #27217b;
+    border-radius: 8px;
+    margin: 8px;
+    padding: 8px;
+}
+
+.container-movie .Title {
+    text-align: center;
+    grid-column: 1/6;
+}
+
+.container-movie .Rating {
+    grid-column: 1/2;
+}
+
+.container-movie .Rating {
+    grid-column: 1/2;
+}
+
+.container-movie .Interactive {
+    grid-column: 1/2;
+}
+.container-movie .description {
+    grid-column: 1/4;
+}
+
+.billboard {
+    align-content: center;
+    grid-column: 3/9;
+}
+

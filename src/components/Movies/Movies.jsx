@@ -26,7 +26,7 @@ export default function Movies() {
   return (
     <div>
           <>
-            <h1 style={{ paddingLeft: "10px" }}>Movies</h1>
+            <h1 id="titulo" style={{ paddingLeft: "10px" }}>Movies</h1>
             {
               loadingMovies && <h1>Loading...</h1>
             }

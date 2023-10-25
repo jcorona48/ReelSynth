@@ -15,10 +15,26 @@ Tiene la siguiente estructura.
         </nav>
 
 */  
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
 .logout{
-    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.logout i{
+    font-size: 20px;
     color: rgb(223, 167, 167);
 }
+
 a{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.87);

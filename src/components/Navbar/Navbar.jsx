@@ -42,9 +42,7 @@ export default function Navbar() {
                 <input type="search" placeholder="Search..." className='inputSearch' style={{display: input ? 'flex' : 'none'}}/>
                 <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
                 {
-                    user ? <a style={{
-                        cursor: 'pointer', display: 'flex', gap: '10px', alignItems: 'center'
-                    }} onClick={() =>{ setUser(null) }} ><i className='fas fa-right-to-bracket logout' ></i>  Log Out </a> : <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
+                    user ? <a className='logout' onClick={() =>{ setUser(null) }} ><i className='fas fa-right-to-bracket ' ></i> <span>Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-right-to-bracket'></i> <span>Login</span></Link>
                 }
             </div>
         </nav>

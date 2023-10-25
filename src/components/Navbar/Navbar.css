@@ -15,10 +15,14 @@ Tiene la siguiente estructura.
         </nav>
 
 */  
-
+.logout{
+    font-size: 25px;
+    color: rgb(223, 167, 167);
+}
 a{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.87);
+    
 }
 
 nav{

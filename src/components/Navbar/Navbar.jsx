@@ -19,7 +19,6 @@ const options = [
 export default function Navbar() {
     const {user, setUser} = useContext(UserContext)
     const [input, setInput] = useState(false);
-    console.log(user)
     const toggleInput = () => {
         setInput(!input);
     }
@@ -44,8 +43,8 @@ export default function Navbar() {
                 <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
                 {
                     user ? <a style={{
-                        cursor: 'pointer'
-                    }} onClick={() =>{ setUser(null) }} > Log Out </a> : <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
+                        cursor: 'pointer', display: 'flex', gap: '10px', alignItems: 'center'
+                    }} onClick={() =>{ setUser(null) }} ><i className='fas fa-right-to-bracket logout' ></i>  Log Out </a> : <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
                 }
             </div>
         </nav>

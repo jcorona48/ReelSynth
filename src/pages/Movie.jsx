@@ -2,7 +2,8 @@ import "../PagesCSS/Movie.css"
 import { useParams } from "react-router-dom"
 import { useQuery, gql } from "@apollo/client";
 import useSEO from "../Hooks/useSEO";
-import {parseRating } from '../utils/parse'
+import Rating from "../components/Rating/Rating";
+import { parseDuration } from "../utils/parse";
 
 const query = gql`
     query GetMovies($input: inputMovie) {
@@ -55,14 +56,10 @@ export default function Movie(){
                             <h1>{movie.title}</h1>
                         </div>
                         <div className="Rating card-movie">
-                            <p>Rating:{parseRating(movie.rating).map( (rate, index) => {
-                                if(rate === 1) return <i className='fas fa-star star' key={index} ></i>
-                                if(rate === 0) return <i className='far fa-star star' key={index} ></i>
-                                if(rate === 0.5) return <i className='fas fa-star-half-alt star' key={index}></i>
-                            })}</p>
+                            <p>Rating: <Rating rating={movie.rating} /></p>
                         </div>
                         <div className="Duration card-movie">
-                            <p>Duration: {movie.duration}</p>
+                            <p>Duration: { parseDuration(movie.duration) }</p>
                         </div>
                         <div className="Year card-movie">
                             <p>Year: {movie.year}</p>

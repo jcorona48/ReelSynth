@@ -1,7 +1,8 @@
 import './Navbar.css'
 import { Link } from "react-router-dom";
 import { useState } from 'react';
-
+import { UserContext } from '../../Context/userContext';
+import { useContext } from 'react';
 const options = [
     { label: "Home", value: "", icon: "fas fa-regular fa-house" },
     { label: "Movies", value: "movies", icon: "fas fa-film" },
@@ -16,9 +17,9 @@ const options = [
 
 */
 export default function Navbar() {
-
+    const {user, setUser} = useContext(UserContext)
     const [input, setInput] = useState(false);
-
+    console.log(user)
     const toggleInput = () => {
         setInput(!input);
     }
@@ -41,7 +42,11 @@ export default function Navbar() {
             <div className='inputContainer'>
                 <input type="search" placeholder="Search..." className='inputSearch' style={{display: input ? 'flex' : 'none'}}/>
                 <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
-                <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
+                {
+                    user ? <a style={{
+                        cursor: 'pointer'
+                    }} onClick={() =>{ setUser(null) }} > Log Out </a> : <Link to="/Login"><i className='fas fa-right-to-bracket'></i> Login</Link>
+                }
             </div>
         </nav>
 

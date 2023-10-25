@@ -79,6 +79,7 @@
 .container input {
     background-color: #fdfbfbee;
     border: none;
+    color: #333;
     margin: 8px 0;
     padding: 10px 15px;
     font-size: 13px;

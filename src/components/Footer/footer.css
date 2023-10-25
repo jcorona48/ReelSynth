@@ -4,10 +4,9 @@ footer {
     background-color: #00021d;
     color: #ffff;
     margin-top: 15px;
-    padding: 20px;
     height: 150px;
-    width: auto;
-    position: relative;
+    width: 100%;
+    position: absolute;
     bottom: 0;
 }
 

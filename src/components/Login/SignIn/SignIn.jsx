@@ -1,8 +1,8 @@
 
 import { UserContext } from "../../../Context/userContext"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { useMutation, gql } from "@apollo/client"
-import Alert from "../../Alert/Alert"
+import { AlertsContext } from "../../../Context/alertContext"
 
 
 const query = gql`
@@ -16,42 +16,52 @@ const query = gql`
 `
 
 export default function SignIn(){
-    const {setToken} = useContext(UserContext)
-    const [Login, loading, error] = useMutation(query)
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-        const form = new FormData(e.target)
-        const data = Object.fromEntries(form)
-        const {userName, password} = data
-
-        // username es un email?
-        const isEmail = /\S+@\S+\.\S+/.test(userName)
-
-        let token = null
-        if(isEmail){
-            console.log('es un email')
-            token = await Login({
-                variables: {
-                    input: {
-                        email: userName,
-                        password
-                    }
-                }
-            })
-        }else{
-            console.log('es un username')
-            token = await Login({
-                variables: {
-                    input: {
-                        userName,
-                        password
-                    }
-                }
-            })
+    const {addAlert} = useContext(AlertsContext)
+    const {token, setToken} = useContext(UserContext)
+    const [Login] = useMutation(query)
+    useEffect(() =>{
+        if(token){
+            addAlert('Inicio de sesion exitoso', 'success')
         }
-
-        if(token) setToken(token.data.login.token)
+    },[token])
+    const handleSubmit = async (e) => {
+        
+            e.preventDefault()
+            const form = new FormData(e.target)
+            const data = Object.fromEntries(form)
+            const {userName, password} = data
+    
+            // username es un email?
+            const isEmail = /\S+@\S+\.\S+/.test(userName)
+    
+            let token = null
+            if(isEmail){
+                console.log('es un email')
+                token = await Login({
+                    variables: {
+                        input: {
+                            email: userName,
+                            password
+                        }
+                    }
+                })
+            }else{
+                console.log('es un username')
+                token = await Login({
+                    variables: {
+                        input: {
+                            userName,
+                            password
+                        }
+                    }
+                })
+            }
+    
+            if(token){
+                console.log(token.data.login.token)
+                setToken(token.data.login.token)
+                localStorage.setItem('x-token', token.data.login.token)
+            }   
     }
     return(
         <div className="form-container sign-in">
@@ -69,9 +79,6 @@ export default function SignIn(){
                 <a href="#">Haz olvidado tu Contraseña?</a>
                 <button >Iniciar Sesion</button>
             </form>
-            {
-               !error && !loading && <Alert text={"Se ha iniciado sesion correctamente."} type={'success'}/>
-            }
         </div>
     )
 }

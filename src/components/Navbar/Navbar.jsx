@@ -2,7 +2,7 @@ import './Navbar.css'
 import { Link } from "react-router-dom";
 import { useState, useContext, useMemo, useCallback } from 'react';
 import { UserContext } from '../../Context/userContext';
-
+import { AlertsContext } from '../../Context/alertContext';
 
 /*
 
@@ -10,7 +10,8 @@ import { UserContext } from '../../Context/userContext';
 
 */
 export default function Navbar() {
-    const {user, setUser} = useContext(UserContext)
+    const {user, deleteToken} = useContext(UserContext)
+    const {addAlert} = useContext(AlertsContext)
     const [input, setInput] = useState(false);
     
     const toggleInput = useCallback(() => {
@@ -43,7 +44,7 @@ export default function Navbar() {
                 <input type="search" placeholder="Search..." className='inputSearch' style={{display: input ? 'flex' : 'none'}}/>
                 <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
                 {
-                    user ? <a className='logout' onClick={() =>{ setUser(null) }} ><i className='fas fa-right-to-bracket ' ></i> <span>Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-right-to-bracket'></i> <span>Login</span></Link>
+                    user ? <a className='logout' onClick={() =>{ deleteToken(); addAlert("Cerrado de Sesion", "error") }} ><i className='fas fa-right-to-bracket ' ></i> <span>{`${user.firstName} ${user.lastName} `}Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-right-to-bracket'></i> <span>Login</span></Link>
                 }
             </div>
         </nav>

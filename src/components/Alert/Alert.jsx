@@ -1,7 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Alert.css"; // Archivo CSS para estilos
+import { AlertsContext } from "../../Context/alertContext";
+import { useContext } from "react";
 
-const Alert = ({ text, type }) => {
+
+export const addAlert = (text, type) => {
+  
+  useEffect(() =>{
+    addAlertContext(text, type)
+  },[])
+  
+}
+
+
+export const Alert = ({ text, type, id = crypto.randomUUID() }) => {
+  const {deleteAlert} = useContext(AlertsContext)
+
+  const handleClick = (e) => {
+    e.preventDefault()
+    deleteAlert(id)
+  }
   // Función para obtener la clase CSS según el tipo de alerta
   const getClassByType = () => {
     switch (type) {
@@ -17,9 +35,8 @@ const Alert = ({ text, type }) => {
         return "alert-default";
     }
   };
-
   return (
-    <div className={`alert ${getClassByType()}`}>
+    <div className={`alert ${getClassByType()}`} onClick={handleClick} >
       {text}
     </div>
   );

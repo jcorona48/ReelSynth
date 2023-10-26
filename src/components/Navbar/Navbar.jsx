@@ -19,7 +19,7 @@ export default function Navbar() {
       }, []);
 
     const options = useMemo( () => [
-        { label: "Home", value: "", icon: "fas fa-regular fa-house" },
+        { label: "Home", value: "", icon: "fas fa-home" },
         { label: "Movies", value: "movies", icon: "fas fa-film" },
         { label: "Series", value: "series", icon: "fas fa-tv" },
         { label: "About", value: "about", icon: "fas fa-address-card" },
@@ -28,7 +28,7 @@ export default function Navbar() {
     return (
         
         <nav className="navbar">
-            <Link to="/"><h1 className='logo'> <i className='fas fa-clapperboard'></i> <span>Video JJ</span></h1></Link>
+            <Link to="/"><h1 className='logo'> <i className='fas fa-camera-movie'></i> <span>Video JJ</span></h1></Link>
             <ul>
                 {
                 options.map((option) => (
@@ -42,9 +42,9 @@ export default function Navbar() {
             
             <div className='inputContainer'>
                 <input type="search" placeholder="Search..." className='inputSearch' style={{display: input ? 'flex' : 'none'}}/>
-                <button onClick={toggleInput}><i className={input ? 'fas fa-x' : 'fas fa-search'}></i></button>
+                <button onClick={toggleInput}><i className={input ? 'fas fa-times' : 'fas fa-search'}></i></button>
                 {
-                    user ? <a className='logout' onClick={() =>{ deleteToken(); addAlert("Cerrado de Sesion", "error") }} ><i className='fas fa-right-to-bracket ' ></i> <span>{`${user.firstName} ${user.lastName} `}Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-right-to-bracket'></i> <span>Login</span></Link>
+                    user ? <a className='logout' onClick={() =>{ deleteToken(); addAlert("Cerrado de Sesion", "error") }} ><i className='fas fa-sign-out ' ></i> <span>{`${user.firstName} ${user.lastName} `}Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-sign-in'></i> <span>Login</span></Link>
                 }
             </div>
         </nav>

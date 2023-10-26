@@ -18,12 +18,18 @@ const query = gql`
 export default function SignIn(){
     const {addAlert} = useContext(AlertsContext)
     const {token, setToken} = useContext(UserContext)
-    const [Login] = useMutation(query)
+    const [Login, mutation] = useMutation(query)
+
     useEffect(() =>{
+        if(mutation.error){
+            addAlert(mutation.error.message, 'error')
+        }
         if(token){
             addAlert('Inicio de sesion exitoso', 'success')
         }
-    },[token])
+
+    },[token,mutation.loading])
+
     const handleSubmit = async (e) => {
         
             e.preventDefault()
@@ -58,9 +64,7 @@ export default function SignIn(){
             }
     
             if(token){
-                console.log(token.data.login.token)
                 setToken(token.data.login.token)
-                localStorage.setItem('x-token', token.data.login.token)
             }   
     }
     return(
@@ -68,14 +72,14 @@ export default function SignIn(){
             <form onSubmit={handleSubmit} aria-label="Iniciar Sesion">
                 <h1>Iniciar Sesion</h1>
                 <div className="social-icons">
-                    <a href="#" className="icon"><i className="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" className="icon"><i className="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" className="icon"><i className="fab fa-google"></i></a>
+                    <a href="#" className="icon"><i className="fab fa-facebook"></i></a>
                     <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
                     <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>Inicia Sesion con tu Correo y Contraseña</span>
                 <input type="text" placeholder="Correo Electronico" name="userName"/>
-                <input type="password" placeholder="Contraseña" name="password"/>
+                <input type="password" placeholder="Contraseña" name="password" />
                 <a href="#">Haz olvidado tu Contraseña?</a>
                 <button >Iniciar Sesion</button>
             </form>

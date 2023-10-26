@@ -18,7 +18,6 @@ export default function UserProvider({children}) {
     },[token])
 
     useEffect(() =>{
-        console.log(loading, user)
         if(!loading && !user && token){
             deleteToken()
             addAlert('Sesion expirada', 'warning')

@@ -4,6 +4,7 @@ import SignUp from "./SignUp/SignUp"
 import SignIn from "./SignIn/SignIn"
 import ToggleContainer from "./ToggleContainer/ToggleContainer"
 import useSEO from "../../Hooks/useSEO"
+import Alert from "../Alert/Alert"
 
 export default function Login() {
     const [active, setActive] = useState("")

@@ -2,6 +2,7 @@
 import { UserContext } from "../../../Context/userContext"
 import { useContext } from "react"
 import { useMutation, gql } from "@apollo/client"
+import Alert from "../../Alert/Alert"
 
 
 const query = gql`
@@ -48,13 +49,9 @@ export default function SignIn(){
                     }
                 }
             })
-
-
         }
 
         if(token) setToken(token.data.login.token)
-        console.log(token?.data?.login?.token)
-        console.log(error)
     }
     return(
         <div className="form-container sign-in">
@@ -72,6 +69,9 @@ export default function SignIn(){
                 <a href="#">Haz olvidado tu Contraseña?</a>
                 <button >Iniciar Sesion</button>
             </form>
+            {
+               !error && !loading && <Alert text={"Se ha iniciado sesion correctamente."} type={'success'}/>
+            }
         </div>
     )
 }

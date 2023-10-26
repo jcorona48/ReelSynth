@@ -10,7 +10,7 @@ export default function UserProvider({children}) {
     const [token, setToken] = useState(null)
 
     return (
-        <UserContext.Provider value={{user, setUser, loading, setLoading}}>
+        <UserContext.Provider value={{user, setUser, loading, setLoading, token, setToken}}>
             {children}
         </UserContext.Provider>
     )

@@ -31,9 +31,9 @@ export default function SignIn(){
     },[token,mutation.loading])
 
     const handleSubmit = async (e) => {
-        
             e.preventDefault()
             const form = new FormData(e.target)
+            
             const data = Object.fromEntries(form)
             const {userName, password} = data
     
@@ -66,10 +66,11 @@ export default function SignIn(){
             if(token){
                 setToken(token.data.login.token)
             }   
+
     }
     return(
         <div className="form-container sign-in">
-            <form onSubmit={handleSubmit} aria-label="Iniciar Sesion">
+            <form onSubmit={handleSubmit} aria-label="Iniciar Sesion" autoSave="off">
                 <h1>Iniciar Sesion</h1>
                 <div className="social-icons">
                     <a href="#" className="icon"><i className="fab fa-google"></i></a>
@@ -77,11 +78,11 @@ export default function SignIn(){
                     <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
                     <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>Inicia Sesion con tu Correo y Contraseña</span>
-                <input type="text" placeholder="Correo Electronico" name="userName"/>
-                <input type="password" placeholder="Contraseña" name="password" />
+                <span>Inicia Sesion con tu Correo/Usuario y Contraseña</span>
+                <input type="text" placeholder="Correo Electronico / Username" name="userName" autoCorrect="off" required />
+                <input type="password" placeholder="Contraseña" name="password" required />
                 <a href="#">Haz olvidado tu Contraseña?</a>
-                <button >Iniciar Sesion</button>
+                <button type="submit">Iniciar Sesion</button>
             </form>
         </div>
     )

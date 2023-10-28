@@ -23,7 +23,7 @@ export default function Card({item}) {
                     <div className='Preview-Card'>
                         <div>
                             <p>
-                                { item.title} la locura ha vuelto
+                                { item.title}
                             </p>
                         </div>
                     </div>

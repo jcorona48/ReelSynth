@@ -64,22 +64,24 @@ export default function Movie(){
                                     <div className="like"><i className="fa-solid fa-heart"></i> {movie.likeCount}</div>
                                     <div className="comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
                                 </div>
-                                <span className="center parte rating"><Rating rating={movie.rating} /></span>
-                                <span className=" center parte duration">{ parseDuration(movie.duration) }</span>
-                                <span className="center parte year">{movie.year}</span>
+                                <span className="center rating"><Rating rating={movie.rating} /></span>
+                                <span className=" center duration">{ parseDuration(movie.duration) }</span>
+                                <span className="center year">{movie.year}</span>
                             </div>
 
                             <div className="cont description">
-                                <span className="parte description-info">{movie.description}</span>
-                                <div className="parte genrer">
+                                <span className="description-info">{movie.description}</span>
+                                <div className=" center genrer">
                                     <p>Categoria:
-                                    <a> {movie.genrers && movie.genrers.map( (genrer, index) =>{
+                                    <a>{movie.genrers && movie.genrers.map( (genrer, index) =>{
                                     if(index === movie.genrers.length - 1) return genrer.name
                                     return genrer.name + ', '
                                     })}</a></p>
                                 </div>
-                                <div className="parte studio">
+                                <div className="center studio">
                                     <p>Studio: <a>{movie.studio && movie.studio.name} </a></p>
+                                </div>
+                                <div className="center producer">
                                     <p>Producer: <a>{movie.studio && movie.studio.producer.name}</a></p>
                                 </div>
                             </div>

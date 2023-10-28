@@ -29,7 +29,7 @@
 }
 
 .fondo-movie{
-    
+    position: absolute;
     z-index: -1;
     filter: blur(1.5px) brightness(10%);
     object-fit: cover;

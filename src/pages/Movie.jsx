@@ -44,7 +44,8 @@ export default function Movie(){
     })
     const movie = data && data?.getMovies ? data?.getMovies[0] : null;
     return(
-        <div className="container-movie"> 
+        <div className="Fondo">
+            
             { loading && <h1>Loading...</h1> }
             { error && <h1>Error...{error.message}</h1> }
             { data?.getMovies && data?.getMovies.length === 0 && <h1>Not Found</h1>}
@@ -52,41 +53,36 @@ export default function Movie(){
             {
                 data?.getMovies && data?.getMovies.length > 0 && (
                     <>
-                        <div className="Title card-movie">
-                            <h1>{movie.title}</h1>
-                        </div>
-                        <div className="Rating card-movie">
-                            <p>Rating: <Rating rating={movie.rating} /></p>
-                        </div>
-                        <div className="Duration card-movie">
-                            <p>Duration: { parseDuration(movie.duration) }</p>
-                        </div>
-                        <div className="Year card-movie">
-                            <p>Year: {movie.year}</p>
-                        </div>
-                        <div className="Interactive card-movie">
-                            <p>Like: <span style={{fontSize: '16px', color: 'red'}}>♥</span>  {movie.likeCount}</p>
-                            <p>Comment: 💬 {movie.commentCount} </p>
-                        </div>
-                        
-                        <div className="Creator card-movie">
-                            <p>Studio: {movie.studio && movie.studio.name}</p>
-                            <p>Producer: {movie.studio && movie.studio.producer.name}</p>
-                        </div>
+                    <img className="fondo-movie" src={movie.imgURL} />
+                        <div className="contenedor-movie">
+                            <div className=" billboard">
+                                <img className="picture" src={movie.imgURL} alt="billboard"/>
+                            </div>
+                            <div className="cont movie">
+                                <div className="parte head">
+                                    <h1 className="titulo">{movie.title}</h1>
+                                    <div className="like"><i className="fa-solid fa-heart"></i> {movie.likeCount}</div>
+                                    <div className="comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
+                                </div>
+                                <span className="center parte rating"><Rating rating={movie.rating} /></span>
+                                <span className=" center parte duration">{ parseDuration(movie.duration) }</span>
+                                <span className="center parte year">{movie.year}</span>
+                            </div>
 
-                        <div className="Genrer card-movie">
-                            <p>Genrers: {movie.genrers && movie.genrers.map( (genrer, index) =>{
-                                if(index === movie.genrers.length - 1) return genrer.name
-                                return genrer.name + ', '
-                            })}</p>
-                        </div>
-
-                        <div className="description card-movie">
-                            <p>Description: {movie.description}</p>
-                        </div>
-
-                        <div className="billboard card-movie">
-                            <img src={movie.imgURL} alt={movie.title} />
+                            <div className="cont description">
+                                <span className="parte description-info">{movie.description}</span>
+                                <div className="parte genrer">
+                                    <p>Categoria:
+                                    <a> {movie.genrers && movie.genrers.map( (genrer, index) =>{
+                                    if(index === movie.genrers.length - 1) return genrer.name
+                                    return genrer.name + ', '
+                                    })}</a></p>
+                                </div>
+                                <div className="parte studio">
+                                    <p>Studio: <a>{movie.studio && movie.studio.name} </a></p>
+                                    <p>Producer: <a>{movie.studio && movie.studio.producer.name}</a></p>
+                                </div>
+                            </div>
                         </div>
                     </>
                 )

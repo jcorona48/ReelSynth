@@ -20,7 +20,6 @@
     width: 100%;
     height: auto;
     box-shadow: 0 0 30px #000;
-    max-width: 200px;
 }
 
 .star{
@@ -100,19 +99,19 @@
 }
 
 .Preview-Card div{
-    width: 100%;
+    width: 100% ;
     display: flex;
     align-items: center;
-    justify-content: center;
     min-height: 40px;
+    border-radius: 7px;
     /* Coloca el texto en negrita */
     font-weight: bold;
     /* Quiero que el fondo tenga un degradado oscuro pero que al final se ponga transparente */
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent); 
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), transparent); 
     color: rgba(255, 255, 255, 0.87);
 
 }
 
 .Preview-Card div p{
-    margin: 0 5px;
+    margin: 0 10px;
 }

@@ -32,25 +32,18 @@
     position: absolute;
     top: 65px;
     left: 0;
-    background-color: #080050;
+    background-color: #050035;
     border-radius: 12px;
     width: 300px;
     height: 600px;
     list-style: none;
     padding: 0;
-    opacity: 0;
     transform: translateX(-20px);
     transition: opacity 0.3s, transform 0.3s;
     flex-direction: column;
+    text-align: center;
     gap: 12px;
-}
-
-.menu-left.active {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    opacity: 1;
-    transform: translateY(0);
+    z-index: 1;
 }
 
 .container-left-option {
@@ -96,13 +89,17 @@
     transform-origin: bottom left;
 }
 
-.menu-left span {
+.message-dev {
     color: #fff;
-}
+    margin-top: 8px;
+    border-top: 1px solid #fff;
+} 
+
+/* Lupa */
 
 .container-lupa-left {
     margin-top: 12px;
-    width: 94%;
+    width: 99%;
     height: 35px;
     display: flex;
     align-items: center;
@@ -113,7 +110,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 94%;
+    width: 90%;
     height: 35px;
     background: #ffff;
     border-radius: 8px;
@@ -123,7 +120,7 @@
 }
 
 .lupa-left:hover {
-    width: 98%;
+    width: 96%;
 }
 
 .lupa-left input {
@@ -140,6 +137,10 @@
     font-size: 22px;
     color: #000000;
     cursor: pointer;
+}
+
+.lupa-left button {
+    display: none;
 }
 
 /* Logo */

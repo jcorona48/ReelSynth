@@ -20,6 +20,12 @@ export default function ShowMenuRigth(){
         { label: "Sign Out", value: "", icon: "" }
     ]) ;
 
+    const [isMenuRigthOpen, setIsMenuRigthOpen] = useState(false);
+
+    const handleClick = () => {
+        setIsMenuRigthOpen(!isMenuRigthOpen);
+    };
+
     return(
         <div className="container-rigth">
             <div className="lupa">
@@ -31,7 +37,8 @@ export default function ShowMenuRigth(){
                 {
                     user ? <a className='logout' onClick={() =>{ deleteToken(); addAlert("Cerrado de Sesion", "error") }} ><i className='fas fa-sign-out ' ></i> <span >{`${user.firstName} ${user.lastName} `}Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-sign-in'></i> <span>Login</span></Link>
                 }
-                <button id="boton-session"><img /></button>
+                <button id="boton-session" onClick={handleClick}><img /></button>
+                {isMenuRigthOpen && (
                 <div className="menu-session">
                     <div className="perfil">
                         <a><img /></a>
@@ -47,6 +54,7 @@ export default function ShowMenuRigth(){
                         }
                     </ul>
                 </div>
+                )}
             </div>
         </div>
     );

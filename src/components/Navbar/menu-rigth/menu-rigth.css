@@ -71,7 +71,7 @@
 
 .menu-session {
     position: absolute;
-    top: 55px;
+    top: 75px;
     right: 0;
     background-color: #080050;
     border-radius: 12px;
@@ -79,18 +79,17 @@
     height: 190px;
     list-style: none;
     padding: 0;
-    opacity: 0;
     transform: translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 4px;
+    z-index: 1;
 }
 
 .menu-session.active {
     display: flex;
-    opacity: 1;
     transform: translateY(0);
 }
 

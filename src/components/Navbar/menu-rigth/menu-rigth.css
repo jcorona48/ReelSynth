@@ -1,0 +1,147 @@
+/* Menu de session */
+.container-session {
+    position: relative;
+    font-size: 12px;
+}
+
+#boton-session {
+    border: none;
+    background-color: #ffffff;
+    color: #050505;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#boton-session img {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+}
+
+.menu-session {
+    position: absolute;
+    top: 55px;
+    right: 0;
+    background-color: #080050;
+    border-radius: 12px;
+    width: 220px;
+    height: 190px;
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.menu-session.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-session li {
+    padding: 6px;
+    display: flex;
+}
+.menu-session a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.session-opcion {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: leff;
+    justify-content: left;
+}
+
+.session-opcion li a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: font-size 0.3s;
+}
+
+.session-opcion li a:hover, li a:focus {
+    font-size: 18px; 
+}
+
+.opcion::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #1753ac;
+    transform-origin: bottom right;
+    transition: 0.3s ease-out;
+}
+
+.opcion:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.perfil {
+    margin-top: 4px;
+    font-size: 12px;
+    background-color: #00042e;
+    border-radius: 8px;
+    width: 95%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.perfil img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.out:hover {
+    color: #ff0000;
+}
+
+.out::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #a10000;
+    transform-origin: bottom right;
+    transition: 0.3s ease-out;
+}
+
+.out:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+@media screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+    
+}

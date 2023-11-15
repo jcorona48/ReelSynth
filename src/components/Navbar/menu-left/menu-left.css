@@ -2,6 +2,13 @@
 
 /* Menu rapido izquierdo */
 
+.container-left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
 .container-menu-left {
     position: relative;
     font-size: 12px;
@@ -133,4 +140,18 @@
     font-size: 22px;
     color: #000000;
     cursor: pointer;
+}
+
+/* Logo */
+.container-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
 }

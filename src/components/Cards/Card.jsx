@@ -1,5 +1,5 @@
 import './Card.css'
-import { parseDuration, limitDescription } from '../../utils/parse'
+import { parseDuration } from '../../utils/parse'
 
 import Rating from '../Rating/Rating'
 import { useState } from 'react'

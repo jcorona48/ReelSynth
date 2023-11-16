@@ -6,13 +6,11 @@ import { AlertsContext } from "../../../Context/alertContext"
 
 
 const query = gql`
-
     mutation Login($input: LoginInput!) {
         login(input: $input) {
                 token
             }
     }
-    
 `
 
 export default function SignIn(){
@@ -66,7 +64,6 @@ export default function SignIn(){
             if(token){
                 setToken(token.data.login.token)
             }   
-
     }
     return(
         <div className="form-container sign-in">

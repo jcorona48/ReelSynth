@@ -44,11 +44,16 @@
     margin: 1rem;
 }
 
-.card-text p {
+.card-text *, .card-footer p{
     color: rgba(255, 255, 255, 0.87);
+}
+
+.card-text p {
     font-size: 0.8rem;
     margin-top: 0.3rem;
 }
+
+
 
 .card-text {
     flex: 1;

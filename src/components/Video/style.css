@@ -1,0 +1,34 @@
+.watch-video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  .watch-video {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1080px;
+    gap: 15px;
+  }
+  
+  .watch-video-container .video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.5%;
+    display: flex;
+  }
+  
+  .watch-video-container .video iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+  }
+  

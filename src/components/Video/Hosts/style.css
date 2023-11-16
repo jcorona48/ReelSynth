@@ -1,0 +1,23 @@
+.hosts-video {
+    display: flex;
+    width: 100%;
+  }
+  
+  .hosts-video ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .hosts-video ul li {
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(3, 3, 253, 0.2);
+  }
+  
+  .hosts-video ul li:hover {
+    background-color: rgba(25, 25, 180, 0.432);
+  }
+  

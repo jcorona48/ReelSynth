@@ -15,9 +15,9 @@ export default function ShowMenuRigth(){
     const {addAlert} = useContext(AlertsContext)
 
     const optionsRigth = useMemo( () => [
-        { label: "Profile", value: "", icon: "" },
-        { label: "Follow", value: "", icon: "" },
-        { label: "Sign Out", value: "", icon: "" }
+        { label: "Profile", value: "", class:"option", icon: "" },
+        { label: "Follow", value: "", class:"option", icon: "" },
+        { label: "Sign Out", value: "", class:"out", icon: "" }
     ]) ;
 
     const [isMenuRigthOpen, setIsMenuRigthOpen] = useState(false);
@@ -37,18 +37,18 @@ export default function ShowMenuRigth(){
                 {
                     user ? <a className='logout' onClick={() =>{ deleteToken(); addAlert("Cerrado de Sesion", "error") }} ><i className='fas fa-sign-out ' ></i> <span >{`${user.firstName} ${user.lastName} `}Log Out</span>  </a> : <Link to="/Login" className='navbar-item'><i className='fas fa-sign-in'></i> <span>Login</span></Link>
                 }
-                <button id="boton-session" onClick={handleClick}><img /></button>
+                <button id="boton-session" onClick={handleClick}><img src='https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'/></button>
                 {isMenuRigthOpen && (
                 <div className="menu-session">
                     <div className="perfil">
-                        <a><img /></a>
-                        <a></a>
+                        <a><img src='https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'/></a>
+                        <a>Username</a>
                     </div>
                     <ul className="session-opcion">
                         {
                         optionsRigth.map((option) => (
                             <li key={option.value}>
-                                <Link to={option.value} className='navbar-item'> <i className={option.icon}></i> <span> { option.label} </span></Link>
+                                <Link to={option.value} className={option.class}> <i className={option.icon}></i> <span> { option.label} </span></Link>
                             </li>
                             ))
                         }

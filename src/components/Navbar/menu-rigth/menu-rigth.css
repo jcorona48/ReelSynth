@@ -103,6 +103,31 @@
     color: #ffffff;
 }
 
+.Login-item {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.Login-item a {
+    border: #ffffff solid 1px;
+    border-radius: 8px;
+    margin-left: 4px;
+    text-decoration: none;
+    padding: 4px 8px;
+    text-decoration: none;
+}
+
+.Login-item a:hover {
+    background-color: #ffffff;
+    color: #000000;
+    transition: all 0.4s ease-in-out;
+}
+
+.Login-item span {
+    margin-left: 4px;
+}
+
 .session-opcion {
     width: 88%;
     margin-bottom: 8px;

@@ -41,7 +41,7 @@ export default function ShowMenuRigth(){
                         <button id="boton-session" onClick={handleClick}><img src='https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'/></button>
                         
                     )  : (
-                        <Link to="/Login" className='navbar-item'><i className='fas fa-sign-in'></i> <span>Login</span></Link>
+                        <Link to="/Login" className='Login-item'><a><i className='fas fa-sign-in'></i> <span>Login</span></a></Link>
                     )
                 }
                 {

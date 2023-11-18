@@ -149,9 +149,9 @@
     transition: font-size 0.3s;
 }
 
-/* .session-opcion li a:hover, .session-opcion li a:focus {
+.session-opcion li a:hover, .session-opcion li a:focus {
     font-size: 18px; 
-} */
+}
 
 .option::after {
     content: '';

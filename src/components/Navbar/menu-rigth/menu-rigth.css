@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 24px;
 }
 
 .lupa {
@@ -104,28 +104,29 @@
 }
 
 .Login-item {
-    text-decoration: none;
     color: #ffffff;
-    font-size: 20px;
-}
-
-.Login-item a {
-    border: #ffffff solid 1px;
+    font-size: 16px;
     border-radius: 8px;
     margin-left: 4px;
-    text-decoration: none;
     padding: 4px 8px;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
 }
 
-.Login-item a:hover {
+.Login-item:hover {
     background-color: #ffffff;
     color: #000000;
     transition: all 0.4s ease-in-out;
 }
 
-.Login-item span {
-    margin-left: 4px;
+
+
+.fa-circle-user {
+    --fa-primary-color: #02005c; --fa-secondary-color: #ffffff; --fa-secondary-opacity: 1;
+    font-size: 20px;
 }
 
 .session-opcion {

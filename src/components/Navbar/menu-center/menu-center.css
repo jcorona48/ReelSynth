@@ -43,7 +43,7 @@
     transition: font-size 0.3s;
 }
 
-.menu a:hover, a:focus {
+.menu a:hover{
     font-size: 26px; 
 }
 
@@ -77,6 +77,6 @@
     border-bottom: none;
 }
 
-.dropdown a:hover, a:focus {
+/* .dropdown a:hover, .dropdown a:focus {
     font-size: 18px; 
-}
+} */

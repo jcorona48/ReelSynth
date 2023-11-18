@@ -59,7 +59,7 @@
     color: #ffffff;
 }
 
-.left-option li a {
+/* .left-option li a {
     position: relative;
     text-decoration: none;
     color: #ffffff;
@@ -69,7 +69,7 @@
 
 .left-option li a:hover, .left-option li a:focus {
     font-size: 20px; 
-}
+} */
 
 .left-option li a::after {
     content: '';

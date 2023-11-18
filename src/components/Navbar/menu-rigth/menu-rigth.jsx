@@ -15,10 +15,10 @@ export default function ShowMenuRigth(){
     const {addAlert} = useContext(AlertsContext)
 
     const optionsRigth = useMemo( () => [
-        { label: "Profile", value: "", class:"option", icon: "", onClick: () => { } },
-        { label: "Follow", value: "", class:"option", icon: "", onClick: () => { }  },
-        { label: "Sign Out", value: "", class:"out", icon: "", onClick: () => {setIsMenuRigthOpen(false); deleteToken(); addAlert("Cerrado de Sesion", "error");  }  }
-    ] , [deleteToken, addAlert]   ) ;
+        { label: "Profile", value: "", class:"option", icon: "fa-solid fa-user", onClick: () => { } },
+        { label: "Follow", value: "", class:"option", icon: "fa-duotone fa-bookmark", onClick: () => { }  },
+        { label: "Sign Out", value: "", class:"out", icon: "fa-solid fa-right-from-bracket", onClick: () => {setIsMenuRigthOpen(false); deleteToken(); addAlert("Cerrado de Sesion", "error");  }  }
+    ] , [deleteToken, addAlert]   ) ; 
 
     const [isMenuRigthOpen, setIsMenuRigthOpen] = useState(false);
 

@@ -4,6 +4,7 @@ import { useQuery, gql } from "@apollo/client";
 import useSEO from "../Hooks/useSEO";
 import Rating from "../components/Rating/Rating";
 import { parseDuration } from "../utils/parse";
+import TopMovies from "../components/TopMovies/TopMovies";
 
 const query = gql`
     query GetMovies($input: inputMovie) {
@@ -87,9 +88,7 @@ export default function Movie(){
                                     </div>
                                 </div>
                             </div>
-                            <div className="column-2">
-                                <h1>Mural top Peliculas</h1>
-                            </div>
+                            <TopMovies />
                     </div>
                     </>
                 )

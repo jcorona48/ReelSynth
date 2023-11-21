@@ -38,7 +38,7 @@ export default function ShowMenuRigth(){
             <div className="container-session">
                 {
                     user ? (
-                        <button id="boton-session" onClick={handleClick}><img src='https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'/></button>
+                        <button id="boton-session" onClick={handleClick}><img src={user.imgURL}/></button>
                         
                     )  : (
                         <Link to="/Login" className='Login-item'><i className="fa-duotone fa-circle-user"></i> <span>Login</span></Link>

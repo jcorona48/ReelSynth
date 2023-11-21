@@ -1,11 +1,15 @@
 import useSEO from "../Hooks/useSEO.jsx";
+import ProfileUser from "../components/Profile/profile.jsx";
 
-
-export default function Profile() {
-  useSEO({ title: "Profile", description: "Perfil page" });
+export default function Home() {
+  useSEO({ title: "Profile", description: "Profile page" });
   return (
     <div>
-      <h1>Profile</h1>
+          <>
+            <ProfileUser />
+          </>
+        
+      
     </div>
   );
 }

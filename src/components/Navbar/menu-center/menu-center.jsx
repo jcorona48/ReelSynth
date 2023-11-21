@@ -18,7 +18,7 @@ export default function ShowMenuCenter() {
                 { label: "All Genrers", value: "All-Genrers", icon: "fa-solid fa-layer-plus" }, 
         ] },
         { 
-            label: "Producer", value: "producer", icon: "fa-solid fa-circle-video",
+            label: "Producer", value: "producers", icon: "fa-solid fa-circle-video",
             drop: [
                 { label: "Marvel Studios", value: "Marvel Studios", icon: "fa-solid fa-fire" },
                 { label: "Disney", value: "Disney", icon: "fa-solid fa-fire" },

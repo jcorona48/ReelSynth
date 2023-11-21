@@ -1,11 +1,11 @@
 import './profile.css'
-import { useContext } from 'react';
-import { UserContext } from '../../Context/userContext';
+// import { useContext } from 'react';
+// import { UserContext } from '../../Context/userContext';
 
 
 export default function ProfileUser() {
 
-    const {user} = useContext(UserContext)
+    // const {user} = useContext(UserContext)
 
     return (
         <div className='container-profile'>
@@ -14,21 +14,21 @@ export default function ProfileUser() {
                 <div className="container-info">
                     <h2>Profile</h2>
                     <article className="profile-info">
-                        <p>{user.firstName}</p>
+                        {/* <p>{user.firstName}</p>
                         <p>{user.lastName}</p>
-                        <p>{user.country.name}</p>
+                        <p>{user.country.name}</p> */}
                     </article>
                 </div>
                 <div className="container-img">
                     <div className="profile-image">
-                        <a><img src={user.imgURL} alt="Profile" /></a>
+                        <a><img src={'https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'} alt="Profile" /></a>
                     </div>
                 </div>
                 <div className='container-user'>
                     <h2>User Information</h2>
                     <article className="profile-info-user">
-                        <p>{user.userName}</p>
-                        <p>{user.email}</p>
+                        {/* <p>{user.userName}</p>
+                        <p>{user.email}</p> */}
                         <p>Password</p>
                     </article>
                 </div>

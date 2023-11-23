@@ -9,3 +9,7 @@
 .MoviesOptions * {
     text-decoration: none;
 }
+
+.full-option {
+    width: 100%;
+}

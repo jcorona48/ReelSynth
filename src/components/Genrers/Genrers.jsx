@@ -7,7 +7,7 @@ const GET_Genrers = gql`
     query GetGenrers {
         getGenrers {
         id
-        title
+        name
         description
         }
     }

@@ -4,8 +4,7 @@ import { parseDuration } from "../../utils/parse";
 
 export default function MovieOption({item}) {
     return (
-        <div className="top-movies">
-            <main>
+        <main className="top-movies">
                 <div className="top-movies-list">
                     <ul className="list">
                         <li className="list-item">
@@ -22,8 +21,7 @@ export default function MovieOption({item}) {
                         </li>
                     </ul>
                 </div>
-            </main>
-        </div>
+        </main>
 
     )
 }

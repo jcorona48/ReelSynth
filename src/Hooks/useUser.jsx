@@ -32,7 +32,7 @@ export default function useUser(token){
             token
         }
     })
-
+    console.log(data)
     useEffect(() =>{
         if(data){
             console.log(data)

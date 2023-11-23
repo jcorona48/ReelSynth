@@ -1,8 +1,7 @@
-import "../Movies/Movies"
+
 import "./TopMovies.css";
 import { useQuery, gql } from "@apollo/client";
-import Rating from "../Rating/Rating";
-import { parseDuration } from "../../utils/parse";
+import MoviesOptions from "../MovieOption/MoviesOptions";
 
 
 
@@ -19,40 +18,21 @@ const query = gql`
 `;
 
 export default function TopMovies() {
-    
-    
-    const { data, loading, error } = useQuery(query);
-    const movie = data && data?.getMovies ? data?.getMovies[0] : null;
-
+    const { data: movies, loading: loadingMovies, error: errorMovies } = useQuery(query);
     return (
-        <div className="top-movies">
-            <h2>Top Movies</h2>
-            { loading && <h1>Loading...</h1> }
-            { error && <h1>Error...{error.message}</h1> }
-            { data?.getMovies && data?.getMovies.length === 0 && <h1>Not Found</h1>}
+        <div>
+            <>
+            <h1 id="titulo" style={{ paddingLeft: "10px" }} className="Titulo">Top Movies</h1>
             {
-                data?.getMovies && data?.getMovies.length > 0 && (
-                    <>
-                    <div className="top-movies-list">
-                        <ul className="list">
-                            <li className="list-item">
-                                <div className="list-item-img">
-                                    <img src={movie.imgURL} alt="movie" />
-                                </div>
-                                <div className="list-item-info">
-                                    <h3>{movie.title}</h3>
-                                    <div className="list-item-info-rating">
-                                        <p><Rating rating={movie.rating} /></p>
-                                        <p>{ parseDuration(movie.duration) }</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    </>
-                )
+                loadingMovies && <h1>Loading...</h1>
             }
-
+            {
+                errorMovies && <h1>Error...{errorMovies.message}</h1>
+            }
+            {
+                movies?.getMovies && movies?.getMovies.length > 0 ? <MoviesOptions items={movies.getMovies} /> : <h1>No hay peliculas</h1>
+            }
+            </>
         </div>
     );
 }

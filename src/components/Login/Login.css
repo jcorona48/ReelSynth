@@ -15,6 +15,7 @@
     justify-content: center;
     flex-direction: column;
     color: #333;
+    margin-bottom: 140px;
 } 
 
 .container {
@@ -167,7 +168,7 @@
 .toggle {
     background-color: #142850;
     height: 100%;
-    background: linear-gradient(to right, #142850, #142850);
+    background: linear-gradient(to right, #001030, #000c23);
     color: #ffff;
     position: relative;
     left: -100%;

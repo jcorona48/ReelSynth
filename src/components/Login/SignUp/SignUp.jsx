@@ -1,3 +1,16 @@
+import { UserContext } from "../../../Context/userContext"
+import { useContext, useEffect } from "react"
+import { useMutation, gql } from "@apollo/client"
+import { AlertsContext } from "../../../Context/alertContext"
+
+
+const query = gql`
+    mutation Signup($input: UserInput!) {
+    signup(input: $input) {
+        token
+    }
+    }
+`
 
 const countrys = [
     {name: 'Colombia', id: crypto.randomUUID()},
@@ -10,9 +23,53 @@ const countrys = [
 ]
 
 export default function SignUp(){
+    //REGISTRAR USUARIO
+    const {addAlert} = useContext(AlertsContext)
+    const {token, setToken} = useContext(UserContext)
+    const [Signup, mutation] = useMutation(query)
+
+    useEffect(() =>{
+        if(mutation.error){
+            addAlert(mutation.error.message, 'error')
+        }
+
+
+    },[token,mutation.loading])
+
+    const handleSubmit = async (e) => {
+            e.preventDefault()
+            const form = new FormData(e.target)
+            
+            const data = Object.fromEntries(form)
+            const {firstName, lastName, userName, email, password, confirmPassword} = data
+    
+            let token = null
+            if(password === confirmPassword){
+                token = await Signup({
+                    variables: {
+                        input: {
+                            firstName,
+                            lastName,
+                            userName,
+                            email,
+                            password
+                        }
+                    }
+                })
+            }else{
+                addAlert('Las contraseñas no coinciden', 'error')
+            }
+            if(token){
+                setToken(token.data.signup.token)
+                addAlert('Registro exitoso', 'success')
+            }
+        }
+
+
+
     return(
         <div className="form-container sign-up">
-            <form>
+            <form onSubmit={handleSubmit} aria-label="Crear Cuenta" autoSave="off">
                 <h1>Crear Cuenta</h1>
                 <span>Completa el formulario</span>
                 <input name="firstName" type="text" placeholder="Nombre" className="input"/>
@@ -25,10 +82,10 @@ export default function SignUp(){
                         ))
                     }
                 </select>
-                <input name="username" type="text" placeholder="Nombre de Usuario" required className="input"/>
+                <input name="userName" type="text" placeholder="Nombre de Usuario" required className="input"/>
                 <input name="email" type="email" placeholder="Correo Electronico" required className="input"/>
                 <input name="password" type="password" placeholder="Contraseña" required className="input"/>
-                <input name="ConfirmPassword" type="password" placeholder="Contraseña" required className="input"/>
+                <input name="confirmPassword" type="password" placeholder="Contraseña" required className="input"/>
                 <button type="submit">Registrarse</button>
             </form>
         </div>

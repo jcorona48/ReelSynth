@@ -67,7 +67,7 @@
     transition: font-size 0.3s;
 }
 
-.left-option li a:hover, li a:focus {
+.left-option li a:hover, .left-option li a:focus {
     font-size: 20px; 
 }
 
@@ -91,7 +91,7 @@
 
 .message-dev {
     color: #fff;
-    padding-top: 8px;
+    padding-top: 2px;
     border-top: 1px solid #fff;
 } 
 

@@ -17,7 +17,8 @@
 }
 
 .dropdown {
-    min-width: 130px;
+    min-width: 180px;
+    max-width: 280px;
     padding: 15px 10px;
     box-sizing: border-box;
     display: flex;
@@ -26,11 +27,12 @@
     position: absolute;
     top: 40px;
     border-radius: 8px;
-    background-color: #00042e;
+    background-color: #01073f;
     box-shadow: rgba(0,0,0,0.4) 0px 25px 50px -12px;
     opacity: 0;
     visibility: hidden;
     transition: 0.2s ease-in-out;
+    z-index: 1;
 }
 
 .menu a{
@@ -41,7 +43,7 @@
     transition: font-size 0.3s;
 }
 
-.menu a:hover, a:focus {
+.menu a:hover{
     font-size: 26px; 
 }
 
@@ -70,11 +72,11 @@
 }
 
 .dropdown a {
-    font-size: 18px;
+    font-size: 16px;
     padding-bottom: 1px solid #fff;
     border-bottom: none;
 }
 
-.dropdown a:hover, a:focus {
-    font-size: 22px; 
+.dropdown a:hover, .dropdown a:focus {
+    font-size: 18px; 
 }

@@ -15,10 +15,10 @@ export default function ShowMenuRigth(){
     const {addAlert} = useContext(AlertsContext)
 
     const optionsRigth = useMemo( () => [
-        { label: "Profile", value: "", class:"option", icon: "", onClick: () => { } },
-        { label: "Follow", value: "", class:"option", icon: "", onClick: () => { }  },
-        { label: "Sign Out", value: "", class:"out", icon: "", onClick: () => {setIsMenuRigthOpen(false); deleteToken(); addAlert("Cerrado de Sesion", "error");  }  }
-    ] , [deleteToken, addAlert]   ) ;
+        { label: "Profile", value: "Profile", class:"option", icon: "fa-solid fa-user", onClick: () => { } },
+        { label: "Follow", value: "Follow", class:"option", icon: "fa-duotone fa-bookmark", onClick: () => { }  },
+        { label: "Sign Out", value: "", class:"out", icon: "fa-solid fa-right-from-bracket", onClick: () => {setIsMenuRigthOpen(false); deleteToken(); addAlert("Cerrado de Sesion", "error");  }  }
+    ] , [deleteToken, addAlert]   ) ; 
 
     const [isMenuRigthOpen, setIsMenuRigthOpen] = useState(false);
 
@@ -38,10 +38,10 @@ export default function ShowMenuRigth(){
             <div className="container-session">
                 {
                     user ? (
-                        <button id="boton-session" onClick={handleClick}><img src='https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'/></button>
+                        <button id="boton-session" onClick={handleClick}><img src={ user.imgURL || 'https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'}/></button>
                         
                     )  : (
-                        <Link to="/Login" className='navbar-item'><i className='fas fa-sign-in'></i> <span>Login</span></Link>
+                        <Link to="/Login" className='Login-item'><i className="fa-duotone fa-circle-user"></i> <span>Login</span></Link>
                     )
                 }
                 {

@@ -14,7 +14,7 @@
 }
 .columns-container{
     display: flex;
-    gap: 10px;
+    gap: 30px;
     margin-top: 20px;
 }
 
@@ -43,7 +43,6 @@
     border-radius: 8px;
     box-shadow:4px 4px 8px #000ea9;
     max-width: 720px;
-    margin: 10px;
     padding: 10px;
     display: grid;
     grid-template-columns:repeat(9, 1fr);

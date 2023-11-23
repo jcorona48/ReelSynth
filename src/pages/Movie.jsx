@@ -6,7 +6,6 @@ import Rating from "../components/Rating/Rating";
 import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
 
-
 const videos = [
     {
       url: `<iframe src="https://mega.nz/embed/1Xc2nbiQ#9sILVqGpNHDrXF4f4pnhkiztFdjZO8sII80Uumr41jc"  frameborder="0" allowfullscreen></iframe>`,
@@ -34,6 +33,8 @@ const videos = [
       },
     },
   ];
+  
+import TopMovies from "../components/TopMovies/TopMovies";
 
 const query = gql`
     query GetMovies($input: inputMovie) {
@@ -72,6 +73,7 @@ export default function Movie(){
             }
         }
     })
+
     const movie = data && data?.getMovies ? data?.getMovies[0] : null;
     return(
         <div className="Fondo">
@@ -117,9 +119,7 @@ export default function Movie(){
                                     </div>
                                 </div>
                             </div>
-                            <div className="column-2">
-                                <h1>Mural top Peliculas</h1>
-                            </div>
+                            <TopMovies />
                     </div>
                     <WatchVideo videos={videos} movie={movie} />
                     </>

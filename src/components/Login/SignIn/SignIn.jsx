@@ -22,9 +22,6 @@ export default function SignIn(){
         if(mutation.error){
             addAlert(mutation.error.message, 'error')
         }
-        if(token){
-            addAlert('Inicio de sesion exitoso', 'success')
-        }
 
     },[token,mutation.loading])
 
@@ -40,7 +37,6 @@ export default function SignIn(){
     
             let token = null
             if(isEmail){
-                console.log('es un email')
                 token = await Login({
                     variables: {
                         input: {
@@ -50,7 +46,6 @@ export default function SignIn(){
                     }
                 })
             }else{
-                console.log('es un username')
                 token = await Login({
                     variables: {
                         input: {
@@ -63,6 +58,7 @@ export default function SignIn(){
     
             if(token){
                 setToken(token.data.login.token)
+                addAlert('Inicio de sesion exitoso', 'success')
             }   
     }
     return(

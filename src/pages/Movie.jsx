@@ -68,7 +68,7 @@ export default function Movie(){
                                     <div className="parte head">
                                         <h1 className="titulo">{movie.title}</h1>
                                         <div className="like"><i className="fa-solid fa-heart"></i> {movie.likeCount}</div>
-                                        <div className="comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
+                                        <div className="icon-comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
                                     </div>
                                     <span className="center rating"><Rating rating={movie.rating} /></span>
                                     <span className=" center duration">{ parseDuration(movie.duration) }</span>

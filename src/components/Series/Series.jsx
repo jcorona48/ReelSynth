@@ -4,8 +4,8 @@ import { useQuery, gql } from "@apollo/client";
 import Cards from "../Cards/Cards.jsx";
 
 const Get_Series = gql`
-  query GetSeries {
-    getSeries {
+  query GetSeries($input: inputSerie) {
+    getSeries(input: $input) {
       id
       title
       description
@@ -21,8 +21,14 @@ const Get_Series = gql`
   }
 `;
 
-export default function Series() {
-  const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(Get_Series);
+export default function Series({ title = null}) {
+  const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(Get_Series, {
+    variables: {
+      input: {
+        title: title
+      }
+    }
+  });
   return (
           <>
 

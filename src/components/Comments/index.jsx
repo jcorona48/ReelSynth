@@ -85,6 +85,8 @@ const Comments = ({ type, movie }) => {
     if(createComment){
       setComments([createComment, ...comments])
     }
+
+    e.target.reset()
   }
 
   return (
@@ -94,7 +96,7 @@ const Comments = ({ type, movie }) => {
       comments != [] && comments && (
         <>
         <form onSubmit={handleSubmit} className='comment-input'>
-          <input type="text" placeholder='Add your comment' name='comment' />
+          <input type="text" placeholder='Add your comment' name='comment' autoComplete='off' />
         </form>
         <div className='comment-container'>
           {

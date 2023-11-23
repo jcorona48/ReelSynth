@@ -3,17 +3,12 @@ import { Link } from "react-router-dom";
 import { useState, useContext, useCallback, useMemo } from 'react';
 import { UserContext } from '../../../Context/userContext';
 import { AlertsContext } from '../../../Context/alertContext';
-
+import { useNavigate } from 'react-router-dom';
 export default function ShowMenuRigth(){
-    const [setInput] = useState(false);
     
-    const toggleInput = useCallback(() => {
-        setInput((prevInput) => !prevInput);
-        }, [setInput]);
-
     const {user, deleteToken} = useContext(UserContext)
     const {addAlert} = useContext(AlertsContext)
-
+    const navigate = useNavigate()
     const optionsRigth = useMemo( () => [
         { label: "Profile", value: "Profile", class:"option", icon: "fa-solid fa-user", onClick: () => { } },
         { label: "Follow", value: "Follow", class:"option", icon: "fa-duotone fa-bookmark", onClick: () => { }  },
@@ -26,14 +21,30 @@ export default function ShowMenuRigth(){
         setIsMenuRigthOpen(!isMenuRigthOpen);
     };
 
+    const handleSubmit = useCallback((e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const data = Object.fromEntries(form);
+        const { search } = data;
+
+        if(search){
+            
+            const url = search.replace(/ /g, '-');
+
+            navigate(`/search/${url}`);
+            
+        }
+
+    }, []);
+
     return(
         <div className="container-rigth">
 
-            <div className="lupa">
-                <input type="search" placeholder="Pelicula, serie o anime" className='inputSearch'/>
-                <button onClick={toggleInput}></button>
+            <form className="lupa" onSubmit={handleSubmit}>
+                <input type="search" placeholder="Pelicula, serie o anime" name='search' className='inputSearch' autoComplete='off'/>
+                <button type='submit'></button>
                 <i className="fas fa-solid fa-magnifying-glass" style={{color: "#000000",}} />
-            </div>
+            </form>
 
             <div className="container-session">
                 {

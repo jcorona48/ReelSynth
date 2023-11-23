@@ -12,6 +12,7 @@ import Producers from './pages/Producers'
 import Profile from './pages/Profile'
 import Follow  from './pages/Follow'
 import LoginPage from './pages/Login'
+import Search from './pages/Search'
 import Footer from './components/Footer/footer'
 import { useContext } from 'react'
 import { AlertsContext } from './Context/alertContext'
@@ -39,6 +40,8 @@ function App() {
               <Route path="/login" element={ <LoginPage/>} />
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/follow" element={ <Follow/>} />
+              <Route path="/search/:title" element={<Search />} />
+              
               <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
             

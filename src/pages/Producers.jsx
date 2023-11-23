@@ -1,11 +1,12 @@
 import useSEO from "../Hooks/useSEO";
+import ProducersCard from "../components/Producers/Producers.jsx";
 
 export default function Producers() {
     useSEO({ title: "Producers", description: "Producers page"});
 
     return (
         <div>
-            <h1>Producers</h1>
+            <ProducersCard />
         </div>
     )
     }

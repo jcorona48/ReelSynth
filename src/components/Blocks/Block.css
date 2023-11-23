@@ -1,0 +1,33 @@
+.container-block * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 240px;
+}
+
+.block-img img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.block-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.container-block:hover {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ccc;
+}

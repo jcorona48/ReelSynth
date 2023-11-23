@@ -12,6 +12,7 @@ const Hosts = ({ videos, setVideo }) => {
               setVideo(videoAvaliable);
             }}
             title={videoAvaliable.host.description}
+            key={videoAvaliable.host.id}
           >
             {videoAvaliable.host.name}
           </li>

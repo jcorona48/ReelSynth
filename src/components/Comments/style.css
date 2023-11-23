@@ -1,0 +1,43 @@
+
+.comment-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+.comment-input{
+    display: flex;
+    width: 100%;
+}
+
+.comment-input input{
+    display: flex;
+    width: 100%;
+    padding-left: 10px;
+    min-height: 30px;
+}
+.comment{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.comment-user {
+    display: flex;
+    gap: 10px;
+
+}
+
+.comment-user img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.comment p {
+    
+}

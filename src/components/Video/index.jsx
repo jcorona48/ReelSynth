@@ -26,3 +26,4 @@ const WatchVideo = ({ videos, movie }) => {
 };
 
 export default WatchVideo;
+

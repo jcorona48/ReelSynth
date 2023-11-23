@@ -6,7 +6,6 @@ import Rating from "../components/Rating/Rating";
 import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
 
-
 const videos = [
     {
       url: `<iframe src="https://mega.nz/embed/1Xc2nbiQ#9sILVqGpNHDrXF4f4pnhkiztFdjZO8sII80Uumr41jc"  frameborder="0" allowfullscreen></iframe>`,

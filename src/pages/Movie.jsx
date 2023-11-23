@@ -6,33 +6,6 @@ import Rating from "../components/Rating/Rating";
 import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
 
-const videos = [
-    {
-      url: `<iframe src="https://mega.nz/embed/1Xc2nbiQ#9sILVqGpNHDrXF4f4pnhkiztFdjZO8sII80Uumr41jc"  frameborder="0" allowfullscreen></iframe>`,
-      host: {
-        name: 'Mega',
-        description: 'Muy buena calidad pero dura poco',
-      },
-    },
-    {
-      url: `<iframe
-        src="https://www.yourupload.com/embed/Tyx0k86XBTAn"
-        allowfullscreen="true"
-      />`,
-      host: {
-        name: 'YourUpload',
-        description: 'Calidad Promedio pero weno',
-      },
-    },
-  
-    {
-      url: `<iframe src='https://my.mail.ru/video/embed/7512958666216052019' width='626' height='367' frameborder='0' scrolling='no' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>`,
-      host: {
-        name: 'Maru',
-        description: 'Calidad Mala pero dura mucho',
-      },
-    },
-  ];
   
 import TopMovies from "../components/TopMovies/TopMovies";
 
@@ -121,7 +94,7 @@ export default function Movie(){
                             </div>
                             <TopMovies />
                     </div>
-                    <WatchVideo videos={videos} movie={movie} />
+                    <WatchVideo movie={movie} type={'Movie'} />
                     </>
                 )
             }

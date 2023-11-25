@@ -6,14 +6,14 @@ import { useParams } from "react-router-dom";
 
 export default function Search() {
   useSEO({ title: "Home", description: "Home page" });
-  const { title } = useParams();
-  const titleTransformed = title.replace(/-/g, " ");
+  const { title: titleParams } = useParams();
+  const title = titleParams.replace(/-/g, " ");
   return (
     <div>
           <>
-            <MoviesCards title={titleTransformed} />
+            <MoviesCards input={{title}} />
             
-            <SeriesCards title={titleTransformed} />
+            <SeriesCards input={{title}} />
             
           </>
         

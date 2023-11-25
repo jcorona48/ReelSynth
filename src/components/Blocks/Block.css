@@ -12,6 +12,10 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 240px;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
 }
 
 .block-img img {
@@ -23,7 +27,6 @@
 .block-name {
     font-size: 20px;
     font-weight: 600;
-    margin-left: 10px;
 }
 
 .container-block:hover {

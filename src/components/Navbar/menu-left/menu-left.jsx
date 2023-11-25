@@ -1,10 +1,10 @@
 import './menu-left.css';
 import { Link } from "react-router-dom";
 import { useState, useCallback, useMemo } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 export default function ShowMenuLeft(){
     const [setInput] = useState(false);
-
+    const navigate = useNavigate();
     const toggleInput = useCallback(() => {
         setInput((prevInput) => !prevInput);
         }, []);
@@ -15,11 +15,26 @@ export default function ShowMenuLeft(){
         { label: "Series", value: "series", icon: "fas fa-tv" },
         { label: "Anime", value: "anime", icon: "fas fa-solid fa-wand-sparkles" },
         { label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection" },
-        { label: "Producer", value: "producer", icon: "fa-solid fa-circle-video" },
+        { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video" },
         { label: "Top Movies", value: "producer", icon: "fa-solid fa-fire" },
         { label: "Top Series", value: "producer", icon: "fa-solid fa-fire" },
         { label: "Top Anime", value: "producer", icon: "fa-solid fa-fire" }
     ]) ;
+
+    const handleSubmit = useCallback((e) => {
+        e.preventDefault();
+        const form = new FormData(e.target);
+        const data = Object.fromEntries(form);
+        const { search } = data;
+
+        if(search){
+            
+            setIsMenuLeftOpen(false)
+            const url = search.replace(/ /g, '-');
+            navigate(`/search/${url}`);
+        }
+
+    }, []);
 
     const [isMenuLeftOpen, setIsMenuLeftOpen] = useState(false);
 
@@ -34,17 +49,17 @@ export default function ShowMenuLeft(){
                 {isMenuLeftOpen && (
                 <div className="menu-left">
                     <div className="container-lupa-left">
-                        <div className="lupa-left">
-                            <input type="search" placeholder="Pelicula, serie o anime" className='inputSearch'/>
+                        <form className="lupa-left" onSubmit={handleSubmit}>
+                            <input type="search" placeholder="Pelicula, serie o anime" className='inputSearch' name='search'/>
                             <button onClick={toggleInput}></button>
                             <i className="fas fa-solid fa-magnifying-glass" style={{color: "#000000",}} />
-                        </div>
+                        </form>
                     </div>
                     <div className="container-left-option">
                     <ul className="left-option">
                         {
                         optionsLeft.map((option) => (
-                            <li key={option.value}>
+                            <li key={option.value} onClick={() => { setIsMenuLeftOpen(false)}} >
                             <Link to={option.value} className='navbar-item'> <i className={option.icon}></i> <span> { option.label} </span></Link>
                             </li>
                         ))

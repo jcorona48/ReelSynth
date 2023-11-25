@@ -12,7 +12,11 @@ export default function ShowMenuRigth(){
     const optionsRigth = useMemo( () => [
         { label: "Profile", value: "Profile", class:"option", icon: "fa-solid fa-user", onClick: () => { } },
         { label: "Follow", value: "Follow", class:"option", icon: "fa-duotone fa-bookmark", onClick: () => { }  },
-        { label: "Sign Out", value: "", class:"out", icon: "fa-solid fa-right-from-bracket", onClick: () => {setIsMenuRigthOpen(false); deleteToken(); addAlert("Cerrado de Sesion", "error");  }  }
+        { label: "Sign Out", value: "", class:"out", icon: "fa-solid fa-right-from-bracket", onClick: () => {
+            setIsMenuRigthOpen(false); 
+            deleteToken(); 
+            addAlert("Cerrado de Sesion", "error");  
+            } }
     ] , [deleteToken, addAlert]   ) ; 
 
     const [isMenuRigthOpen, setIsMenuRigthOpen] = useState(false);
@@ -30,9 +34,7 @@ export default function ShowMenuRigth(){
         if(search){
             
             const url = search.replace(/ /g, '-');
-
             navigate(`/search/${url}`);
-            
         }
 
     }, []);
@@ -66,7 +68,10 @@ export default function ShowMenuRigth(){
                             {
                             optionsRigth.map((option) => (
                                 <li key={option.value}>
-                                    <Link to={option.value} className={option.class} onClick={option.onClick}> <i className={option.icon}></i> <span> { option.label} </span></Link>
+                                    <Link to={option.value} className={option.class} onClick={() => {
+                                        setIsMenuRigthOpen(false)
+                                        option.onClick()
+                                        }}> <i className={option.icon}></i> <span> { option.label} </span></Link>
                                 </li>
                                 ))
                             }

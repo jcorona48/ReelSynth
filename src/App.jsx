@@ -11,6 +11,8 @@ import Genrers from './pages/Genrers'
 import Producers from './pages/Producers'
 import Profile from './pages/Profile'
 import Follow  from './pages/Follow'
+import Producer from './pages/Producer'
+import Genrer from './pages/Genrer'
 import LoginPage from './pages/Login'
 import Search from './pages/Search'
 import Footer from './components/Footer/footer'
@@ -41,7 +43,8 @@ function App() {
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/follow" element={ <Follow/>} />
               <Route path="/search/:title" element={<Search />} />
-              
+              <Route path="/producers/:id" element={<Producer />} />
+              <Route path="/genrers/:id" element={<Genrer />} />
               <Route path="*" element={<h1>Not Found</h1>} />
             </Routes>
             

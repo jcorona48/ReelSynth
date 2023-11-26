@@ -5,8 +5,7 @@ import useSEO from "../Hooks/useSEO";
 import Rating from "../components/Rating/Rating";
 import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
-
-  
+import { useState, useEffect } from "react";
 import TopMovies from "../components/TopMovies/TopMovies";
 
 const query = gql`
@@ -35,10 +34,15 @@ const query = gql`
 `;
 
 
+
+
 export default function Movie(){
     const { title } = useParams()
     const titleTransformed = title.replace(/-/g, ' ')
+    const [movie, setMovie] = useState(null)
     useSEO({title: titleTransformed, description: "Movie page"})
+
+
     const { data, loading, error } = useQuery(query, {
         variables: {
             input: {
@@ -46,8 +50,14 @@ export default function Movie(){
             }
         }
     })
+    
 
-    const movie = data && data?.getMovies ? data?.getMovies[0] : null;
+    useEffect( () => {
+        if(data?.getMovies && data?.getMovies.length > 0){
+            setMovie(data.getMovies[0])
+        }
+    }, [data])
+
     return(
         <div className="Fondo">
             
@@ -56,7 +66,7 @@ export default function Movie(){
             { data?.getMovies && data?.getMovies.length === 0 && <h1>Not Found</h1>}
 
             {
-                data?.getMovies && data?.getMovies.length > 0 && (
+                data?.getMovies && data?.getMovies.length > 0 && movie && (
                     <>
                     <img className="fondo-movie" src={movie.imgURL} />
                     <div className="columns-container"> 
@@ -70,7 +80,9 @@ export default function Movie(){
                                         <div className="like"><i className="fa-solid fa-heart"></i> {movie.likeCount}</div>
                                         <div className="icon-comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
                                     </div>
-                                    <span className="center rating"><Rating rating={movie.rating} /></span>
+                                    <span className="center rating"> 
+                                        <Rating rating={movie.rating} />
+                                    </span>
                                     <span className=" center duration">{ parseDuration(movie.duration) }</span>
                                     <span className="center year">{movie.year}</span>
                                 </div>

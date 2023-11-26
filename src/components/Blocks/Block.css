@@ -12,8 +12,6 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 240px;
-    cursor: pointer;
-    gap: 8px;
 }
 
 .block-img img {

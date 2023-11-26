@@ -8,3 +8,8 @@
     justify-content: center;
 }
 
+
+.Cars a:hover{
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
+}

@@ -1,8 +1,9 @@
 import './Block.css';
-
-export default function Block({item}) {
+import { Link } from 'react-router-dom';
+export default function Block({item, type}) {
+    console.log(type);
     return (
-        <div className='container-block'>
+        <Link className='container-block' to={`/${type}/${item.id}`}>
             {item.imgURL &&             
                 <a className="block-img">
                     <img src={item.imgURL} alt={item.name}></img>
@@ -10,6 +11,6 @@ export default function Block({item}) {
             <div className='block-name'>
                 <p>{item.name}</p>
             </div>
-        </div>
+        </Link>
     )
 }

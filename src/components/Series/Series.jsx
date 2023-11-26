@@ -21,12 +21,10 @@ const Get_Series = gql`
   }
 `;
 
-export default function Series({ title = null}) {
+export default function Series({ input = { } }) {
   const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(Get_Series, {
     variables: {
-      input: {
-        title: title
-      }
+      input
     }
   });
   return (

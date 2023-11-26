@@ -9,6 +9,7 @@
 }
 
 .container-navbar {
+    z-index: 9999;
     width: 100%;
     height: 60px;
     padding: 0px 40px;

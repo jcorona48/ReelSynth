@@ -22,17 +22,13 @@ const GET_Movies = gql`
 `;
 
 
-export default function Movies({ title }) {
+export default function Movies({ input = {} }) {
 
   const { data: movies, loading: loadingMovies, error: errorMovies } = useQuery(GET_Movies, {
     variables: {
-      input: {
-        title: title
-      }
+      input
     }
   });
-    console.log(movies)
-    console.log(title)
   return (
     <div>
           <>

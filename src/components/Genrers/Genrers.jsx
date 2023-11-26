@@ -26,7 +26,7 @@ export default function Genrers() {
                     errorGenrers && <h1>Error...{errorGenrers.message}</h1>
                 }
                 {
-                    genrers?.getGenrers && genrers?.getGenrers.length > 0 ? <Blocks items={genrers.getGenrers} /> : <h1>No hay generos</h1>
+                    genrers?.getGenrers && genrers?.getGenrers.length > 0 ? <Blocks items={genrers.getGenrers} type='genrers' /> : <h1>No hay generos</h1>
                 }
             </>
         </div>

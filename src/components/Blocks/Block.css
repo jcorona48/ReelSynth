@@ -7,11 +7,13 @@
 .container-block {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 240px;
+    cursor: pointer;
+    gap: 8px;
 }
 
 .block-img img {
@@ -23,7 +25,6 @@
 .block-name {
     font-size: 20px;
     font-weight: 600;
-    margin-left: 10px;
 }
 
 .container-block:hover {

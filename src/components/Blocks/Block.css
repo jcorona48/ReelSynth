@@ -14,6 +14,23 @@
     border-radius: 240px;
 }
 
+.container-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 240px;
+    cursor: pointer;
+    gap: 8px;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+
 .block-img img {
     width: 60px;
     height: 60px;

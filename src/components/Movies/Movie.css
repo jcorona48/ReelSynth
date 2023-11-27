@@ -3,6 +3,32 @@
     margin: 0;
     padding: 0;
 }
+
+.Movies h1{
+    text-align: center;
+    margin-bottom: 24px;
+    background: linear-gradient(to right,#000000, #000646,#000000);
+    border-radius: 12px;
+    width: 40%;
+    font-size: 32px;
+}
+
+.Movies .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: text;
+}
+
 .Fondo{
     display: flex;
     flex: 1;

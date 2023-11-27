@@ -11,7 +11,7 @@ export default function ShowMenuRigth(){
     const navigate = useNavigate()
     const optionsRigth = useMemo( () => [
         { label: "Profile", value: "Profile", class:"option", icon: "fa-solid fa-user", onClick: () => { } },
-        { label: "Follow", value: "Follow", class:"option", icon: "fa-duotone fa-bookmark", onClick: () => { }  },
+        { label: "Favorites", value: "Favorites", class:"option", icon: "fa-solid fa-heart", onClick: () => { }  },
         { label: "Sign Out", value: "", class:"out", icon: "fa-solid fa-right-from-bracket", onClick: () => {
             setIsMenuRigthOpen(false); 
             deleteToken(); 

@@ -30,9 +30,11 @@ export default function Movies({ input = {} }) {
     }
   });
   return (
-    <div>
+    <div className="Movies">
           <>
-            <h1 id="titulo" style={{ paddingLeft: "10px" }}>Movies</h1>
+            <div className="titulo">
+              <h1 id="titulo">Movies</h1>
+            </div>
             {
               loadingMovies && <h1>Loading...</h1>
             }
@@ -40,7 +42,7 @@ export default function Movies({ input = {} }) {
               errorMovies && <h1>Error...{errorMovies.message}</h1>
             }
             {
-              movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <h1>No hay peliculas</h1>
+              movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <div className="alert"><h1>No hay Movies</h1></div>
             }
           </>
     </div>

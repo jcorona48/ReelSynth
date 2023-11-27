@@ -1,4 +1,4 @@
-
+import './Series.css'
 import { useQuery, gql } from "@apollo/client";
 
 import Cards from "../Cards/Cards.jsx";
@@ -28,20 +28,21 @@ export default function Series({ input = { } }) {
     }
   });
   return (
-          <>
-
-            <h1 style={{ paddingLeft: "10px" }}>Series</h1>
-            {
-              loadingSeries && <h1>Loading...</h1>
-            }
-            {
-              errorSeries && <h1>Error...{errorSeries.message}</h1>
-            }
-            {
-              series?.getSeries && series?.getSeries.length > 0 ? <Cards items={series.getSeries} /> : <h1>No hay series</h1>
-            }
-            
-          </>
-        
+    <div className="Series">
+      <>          
+        <div className="titulo">
+          <h1 id='titulo'>Series</h1>
+        </div>
+          {
+            loadingSeries && <h1>Loading...</h1>
+          }
+          {
+            errorSeries && <h1>Error...{errorSeries.message}</h1>
+          }
+          {
+            series?.getSeries && series?.getSeries.length > 0 ? <Cards items={series.getSeries} /> : <div className="alert"><h1>No hay series</h1></div>
+          }
+      </>
+    </div>
   );
 }

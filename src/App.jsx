@@ -10,7 +10,7 @@ import Movie from './pages/Movie'
 import Genrers from './pages/Genrers'
 import Producers from './pages/Producers'
 import Profile from './pages/Profile'
-import Follow  from './pages/Follow'
+import Favorites  from '././pages/Favorites'
 import Producer from './pages/Producer'
 import Genrer from './pages/Genrer'
 import LoginPage from './pages/Login'
@@ -41,7 +41,7 @@ function App() {
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
               <Route path="/profile" element={ <Profile/>} />
-              <Route path="/follow" element={ <Follow/>} />
+              <Route path="/favorites" element={ <Favorites/>} />
               <Route path="/search/:title" element={<Search />} />
               <Route path="/producers/:id" element={<Producer />} />
               <Route path="/genrers/:id" element={<Genrer />} />

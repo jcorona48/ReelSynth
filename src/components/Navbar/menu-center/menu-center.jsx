@@ -9,23 +9,8 @@ export default function ShowMenuCenter() {
         { label: "Movies", value: "movies", icon: "fas fa-film" },
         { label: "Series", value: "series", icon: "fas fa-tv" },
         { label: "Anime", value: "anime", icon: "fas fa-solid fa-wand-sparkles" },
-        { 
-            label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection",
-            drop: [
-                { label: "Action", value: "action", icon: "fa-solid fa-fire" },
-                { label: "Adventure", value: "adventure", icon: "fa-solid fa-fire" },
-                { label: "Comedy", value: "comedy", icon: "fa-solid fa-fire" },
-                { label: "All Genrers", value: "All-Genrers", icon: "fa-solid fa-layer-plus" }, 
-        ] },
-        { 
-            label: "Producer", value: "producers", icon: "fa-solid fa-circle-video",
-            drop: [
-                { label: "Marvel Studios", value: "Marvel Studios", icon: "fa-solid fa-fire" },
-                { label: "Disney", value: "Disney", icon: "fa-solid fa-fire" },
-                { label: "Netflix", value: "Netflix", icon: "fa-solid fa-fire" },
-                { label: "All Producer", value: "All-Producer", icon: "fa-solid fa-layer-plus" },
-        ]
-        }
+        { label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection"},
+        { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video"}
     ]) ;
 
     const [openDropdown, setOpenDropdown] = useState(null);

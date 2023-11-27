@@ -1,0 +1,12 @@
+.container-stars {
+    gap: 50px;
+}
+
+.container-stars .star {
+    font-size: 28px;
+    padding: 4px;
+}
+
+.star {
+    cursor: pointer;
+}

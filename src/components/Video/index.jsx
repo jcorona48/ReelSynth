@@ -4,6 +4,9 @@ import './style.css';
 import Hosts from './Hosts';
 import { useQuery, gql } from "@apollo/client";
 import Comments from '../Comments'
+import Like from '../Like/like.jsx';
+import MakeRating from '../Rating/MakeRating.jsx';
+
 const query = gql`
     query GetVideos($input: inputVideo) {
     getVideos(input: $input) {
@@ -56,7 +59,16 @@ const WatchVideo = ({ type, movie }) => {
       <div className="watch-video">
         <Hosts videos={videos} setVideo={setVideo} />
         <div className="video">{Parse(video.url)}</div>
-        <h2>{movie?.title}</h2>
+        <div className="container-movie-action">
+          <h2>{movie?.title}</h2>
+          <div className="movie-action">
+            <Like />
+
+            {/* <like likeCount={movie?.likeCount} setLikeCount={movie?.setLikeCount} like={movie?.like} setLike={movie?.setLike} dislike={movie?.dislike} setDislike={movie?.setDislike} /> */}
+          
+            <MakeRating />
+          </div>
+        </div>
         <div
           className="comments"
           style={{ display: 'flex', flexDirection: 'column' }}

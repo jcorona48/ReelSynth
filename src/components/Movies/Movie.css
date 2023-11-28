@@ -19,7 +19,7 @@
     justify-content: center;
 }
 
-.alert {
+.alert-movie {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,6 +27,11 @@
     margin-bottom: 20px;
     width: 100%;
     cursor: text;
+}
+
+.alert-movie h1 {
+    background: linear-gradient(to right,#000000, #A6192E,#000000);
+    border-radius: 12px;
 }
 
 .Fondo{

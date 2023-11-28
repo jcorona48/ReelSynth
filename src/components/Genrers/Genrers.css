@@ -1,0 +1,36 @@
+.Genrers {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+}
+
+.Genrers h1{
+    text-align: center;
+    margin-top: 68px;
+    background: linear-gradient(to right,#000000, #000646,#000000);
+    border-radius: 12px;
+    width: 40%;
+    font-size: 32px;
+}
+
+.Genrers .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-genrers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: text;
+}
+
+.alert-genrers h1 {
+    background: linear-gradient(to right,#000000, #A6192E,#000000);
+    border-radius: 12px;
+}

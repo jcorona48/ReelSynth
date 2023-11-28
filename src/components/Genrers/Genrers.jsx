@@ -16,9 +16,9 @@ const GET_Genrers = gql`
 export default function Genrers() {
     const { data: genrers, loading: loadingGenrers, error: errorGenrers } = useQuery(GET_Genrers)
     return (
-        <div>
+        <div className='Genrers'>
             <>
-                <h1 id="titulo" style={{ paddingLeft: "10px" }}>Genrers</h1>
+                <h1 className="titulo">Genrers</h1>
                 {
                     loadingGenrers && <h1>Loading...</h1>
                 }
@@ -26,7 +26,7 @@ export default function Genrers() {
                     errorGenrers && <h1>Error...{errorGenrers.message}</h1>
                 }
                 {
-                    genrers?.getGenrers && genrers?.getGenrers.length > 0 ? <Blocks items={genrers.getGenrers} type='genrers' /> : <h1>No hay generos</h1>
+                    genrers?.getGenrers && genrers?.getGenrers.length > 0 ? <Blocks items={genrers.getGenrers} type='genrers' /> : <h1 className='alert-genrers'>No hay generos</h1>
                 }
             </>
         </div>

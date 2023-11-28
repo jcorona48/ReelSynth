@@ -17,7 +17,7 @@ const GET_Producers = gql`
 export default function Producers() {
     const { data: producers, loading: loadingProducers, error: errorProducers } = useQuery(GET_Producers)
     return (
-        <div>
+        <div className='Producers'>
             <>
                 <h1 id="titulo" style={{ paddingLeft: "10px" }}>Producers</h1>
                 {
@@ -27,7 +27,7 @@ export default function Producers() {
                     errorProducers && <h1>Error...{errorProducers.message}</h1>
                 }
                 {
-                    producers?.getProducers && producers?.getProducers.length > 0 ? <Blocks items={producers.getProducers} /> : <h1>No hay Productores</h1>
+                    producers?.getProducers && producers?.getProducers.length > 0 ? <Blocks items={producers.getProducers} /> : <h1 className='alert-producers'>No hay Productores</h1>
                 }
             </>
         </div>

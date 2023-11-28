@@ -42,7 +42,7 @@ export default function Movies({ input = {} }) {
               errorMovies && <h1>Error...{errorMovies.message}</h1>
             }
             {
-              movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <div className="alert"><h1>No hay Movies</h1></div>
+              movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <div className="alert-movie"><h1>No hay Movies</h1></div>
             }
           </>
     </div>

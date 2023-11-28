@@ -16,6 +16,7 @@ import Favorites  from '././pages/Favorites'
 import Producer from './pages/Producer'
 import Genrer from './pages/Genrer'
 import LoginPage from './pages/Login'
+import Anime from './pages/Anime'
 import Search from './pages/Search'
 import Footer from './components/Footer/footer'
 import { useContext } from 'react'
@@ -43,6 +44,7 @@ function App() {
               <Route path="/genrers" element={ <Genrers/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
+              <Route path="/anime" element={ <Anime/>} />
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/favorites" element={ <Favorites/>} />
               <Route path="/search/:title" element={<Search />} />

@@ -6,6 +6,7 @@ import WatchVideo from "../components/Video";
 import { useState, useEffect } from "react";
 import TopMovies from "../components/TopMovies/TopMovies";
 import CardGrid from "../components/CardGrid/";
+import Comments from "../components/Comments";
 const query = gql`
     query GetMovies($input: inputMovie) {
     getMovies(input: $input) {
@@ -72,6 +73,10 @@ export default function Movie(){
                                 <TopMovies />
                         </div>
                         <WatchVideo movie={movie} type={'Movie'} />
+                        <div style={{width: '100%', maxWidth: '1080px'}} className="comments">
+                            <Comments movie={movie} type={'Movie'} />
+                        </div>
+                        
                     </>
                 )
             }

@@ -69,12 +69,6 @@ const WatchVideo = ({ type, movie }) => {
             <MakeRating />
           </div>
         </div>
-        <div
-          className="comments"
-          style={{ display: 'flex', flexDirection: 'column' }}
-        >
-          <Comments type={type} movie={movie} />
-        </div>
       </div>
     </div>
       )

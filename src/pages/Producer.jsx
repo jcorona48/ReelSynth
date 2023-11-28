@@ -1,6 +1,7 @@
 import useSEO from "../Hooks/useSEO.jsx";
 import MoviesCards from "../components/Movies/Movies.jsx";
 import SeriesCards from "../components/Series/Series.jsx";
+import Detail from "../components/details/detail.jsx";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -9,6 +10,8 @@ const query = gql`
         getProducer(id: $id) {
             name
             id
+            description
+            imgURL
         }
 }
 `
@@ -27,17 +30,17 @@ export default function Producer() {
         
           <>
 
-          {
-                loadingProducer && <h1>Loading...</h1>
-                }
-                {
-                errorProducer && <h1>Error...{errorProducer.message}</h1>
+            {
+            loadingProducer && <h1>Loading...</h1>
+            }
+            {
+            errorProducer && <h1>Error...{errorProducer.message}</h1>
             }
             
             {
-                producer?.getProducer ? <h1>Productora: {producer.getProducer.name}</h1> : <h1>No hay Productora</h1>
+                producer?.getProducer ? <Detail item={producer?.getProducer} />: <h1>No hay Productora</h1>
             }
-            
+
             <MoviesCards input={{producer: id}} />
             
             <SeriesCards input={{producer: id}} />

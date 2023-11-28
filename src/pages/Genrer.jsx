@@ -1,6 +1,7 @@
 import useSEO from "../Hooks/useSEO.jsx";
 import MoviesCards from "../components/Movies/Movies.jsx";
 import SeriesCards from "../components/Series/Series.jsx";
+import Detail from "../components/details/detail.jsx";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -35,7 +36,7 @@ export default function Genrer() {
             }
             
             {
-                genrer?.getGenrer ? <h1>Genrer: {genrer.getGenrer.name}</h1> : <h1>No hay genrer</h1>
+                genrer?.getGenrer ? <Detail item={genrer?.getGenrer} /> : <h1>No hay genrer</h1>
             }
             
             <MoviesCards input={{genrers: [id]}} />

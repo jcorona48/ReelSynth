@@ -1,5 +1,6 @@
 import './Block.css';
 import { Link } from 'react-router-dom';
+
 export default function Block({item, type}) {
     console.log(type);
     return (

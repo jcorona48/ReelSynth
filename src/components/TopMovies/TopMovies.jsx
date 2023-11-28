@@ -1,7 +1,7 @@
 
 import "./TopMovies.css";
 import { useQuery, gql } from "@apollo/client";
-import MoviesOptions from "../MovieOption/MoviesOptions";
+import ContentsOptions from "../ContentOption/ContentsOptions";
 
 
 
@@ -30,7 +30,7 @@ export default function TopMovies() {
                 errorMovies && <h1>Error...{errorMovies.message}</h1>
             }
             {
-                movies?.getMovies && movies?.getMovies.length > 0 ? <MoviesOptions items={movies.getMovies} /> : <h1>No hay peliculas</h1>
+                movies?.getMovies && movies?.getMovies.length > 0 ? <ContentsOptions items={movies.getMovies} type="movie" /> : <h1>No hay peliculas</h1>
             }
             </>
         </div>

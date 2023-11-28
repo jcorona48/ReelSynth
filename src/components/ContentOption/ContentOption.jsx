@@ -1,4 +1,4 @@
-import './MovieOption.css'
+import './ContentOption.css'
 import Rating from "../Rating/Rating";
 import { parseDuration } from "../../utils/parse";
 
@@ -15,7 +15,8 @@ export default function MovieOption({item}) {
                                 <h3>{item.title}</h3>
                                 <div className="list-item-info-rating">
                                     <p><Rating rating={item.rating} /></p>
-                                    <p>{ parseDuration(item.duration) }</p>
+                                    { item.seasons && <p>{item.seasons} seasons</p> }
+                                    { item.duration && <p>{parseDuration(item.duration)}</p> }
                                 </div>
                             </div>
                         </li>

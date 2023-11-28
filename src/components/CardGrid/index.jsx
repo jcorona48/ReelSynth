@@ -1,5 +1,6 @@
 import Rating from "../Rating/Rating"
 import { parseDuration } from "../../utils/parse"
+import './style.css'
 
 export default function CardGrid({ data, type = 'movie' }) {
     return (

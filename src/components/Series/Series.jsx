@@ -14,6 +14,7 @@ const Get_Series = gql`
       year
       commentCount
       imgURL
+      seasons
       genrers{
         name
       }
@@ -40,7 +41,7 @@ export default function Series({ input = { } }) {
             errorSeries && <h1>Error...{errorSeries.message}</h1>
           }
           {
-            series?.getSeries && series?.getSeries.length > 0 ? <Cards items={series.getSeries} /> : <div className="alert-series"><h1>No hay series</h1></div>
+            series?.getSeries && series?.getSeries.length > 0 ? <Cards items={series.getSeries} type={'serie'} /> : <div className="alert-series"><h1>No hay series</h1></div>
           }
       </>
     </div>

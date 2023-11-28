@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import WatchVideo from "../components/Video";
 import TopMovies from "../components/TopMovies/TopMovies";
 import CardGrid from "../components/CardGrid/";
+import Comments from "../components/Comments";
 const query = gql`
     query GetSeries($input: inputSerie) {
         getSeries(input: $input) {
@@ -91,7 +92,7 @@ export default function Serie() {
                                 <TopMovies />
                         </div>
                         
-                        <div>
+                        <div style={{width: '100%', maxWidth: '1080px'}}>
                             {dataSeasons && dataSeasons?.getSeasons && dataSeasons.getSeasons.map(season => {
                                 return (
                                     <div key={season.id}>
@@ -103,7 +104,10 @@ export default function Serie() {
                                 )
                             })
                             }
+                            <Comments movie={serie} type={'Serie'} />
                         </div>
+                        
+                        
                     </>
                 )
             }

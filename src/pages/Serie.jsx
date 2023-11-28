@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 import useSEO from "../Hooks/useSEO";
 import { useEffect, useState } from "react";
-import WatchVideo from "../components/Video";
-import TopMovies from "../components/TopMovies/TopMovies";
+// import WatchVideo from "../components/Video";
+import TopSeries from "../components/TopSeries/TopSeries";
 import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
 const query = gql`
@@ -40,7 +40,7 @@ const querySeasons = gql`
             number
             title
             episodesCount
-  }
+    }
 }
 `;
 
@@ -61,7 +61,7 @@ export default function Serie() {
         }
     })
 
-    const { data: dataSeasons, loading: loadingSeasons, error: errorSeasons } = useQuery(querySeasons, {
+    const { data: dataSeasons } = useQuery(querySeasons, {
         variables: {
             input: {
                 serie: serie?.id
@@ -89,7 +89,7 @@ export default function Serie() {
                         <img className="fondo-movie" src={serie.imgURL} />
                         <div className="columns-container"> 
                                 <CardGrid data={serie} type='serie' />
-                                <TopMovies />
+                                <TopSeries data={serie} type='serie' />
                         </div>
                         
                         <div style={{width: '100%', maxWidth: '1080px'}}>

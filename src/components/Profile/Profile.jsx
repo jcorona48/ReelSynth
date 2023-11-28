@@ -8,7 +8,7 @@ export default function ProfileUser() {
     const {user} = useContext(UserContext)
     console.log(user)
     return ( <> {user &&         
-                    <div className='container-profile'>
+            <div className='container-profile'>
                 <h1>Profile Data</h1>
                 <div className='profile'>
                     <div className="container-info">
@@ -22,6 +22,9 @@ export default function ProfileUser() {
                     <div className="container-img">
                         <div className="profile-image">
                             <a><img src={user.imgURL || 'https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'} alt="Profile" /></a>
+                        </div>
+                        <div className="container-change-img">
+                            <a className="change-img"> <i className='fa-regular fa-pen-to-square'></i>Edit</a>
                         </div>
                     </div>
                     <div className='container-user'>

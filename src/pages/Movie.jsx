@@ -2,8 +2,6 @@ import "../components/Movies/Movies"
 import { useParams } from "react-router-dom"
 import { useQuery, gql } from "@apollo/client";
 import useSEO from "../Hooks/useSEO";
-import Rating from "../components/Rating/Rating";
-import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
 import { useState, useEffect } from "react";
 import TopMovies from "../components/TopMovies/TopMovies";

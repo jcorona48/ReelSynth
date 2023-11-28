@@ -16,7 +16,7 @@ export default function CardGrid({ data, type = 'movie' }) {
                 <span className="center rating">
                     <Rating rating={data.rating} />
                 </span>
-                <span className=" center duration">{parseDuration(data.duration)}</span>
+                <span className=" center duration">{type === 'movie' ? parseDuration(data.duration) : `Seasons ${data.seasons}`}</span>
                 <span className="center year">{data.year}</span>
             </div>
 

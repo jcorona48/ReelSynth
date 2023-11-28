@@ -7,7 +7,7 @@ import { parseDuration } from "../utils/parse";
 import WatchVideo from "../components/Video";
 import { useState, useEffect } from "react";
 import TopMovies from "../components/TopMovies/TopMovies";
-
+import CardGrid from "../components/CardGrid/";
 const query = gql`
     query GetMovies($input: inputMovie) {
     getMovies(input: $input) {
@@ -68,45 +68,12 @@ export default function Movie(){
             {
                 data?.getMovies && data?.getMovies.length > 0 && movie && (
                     <>
-                    <img className="fondo-movie" src={movie.imgURL} />
-                    <div className="columns-container"> 
-                            <div className="contenedor-movie">
-                                <div className=" billboard">
-                                    <img className="picture" src={movie.imgURL} alt="billboard"/>
-                                </div>
-                                <div className="cont movie">
-                                    <div className="parte head">
-                                        <h1 className="titulo">{movie.title}</h1>
-                                        <div className="like"><i className="fa-solid fa-heart"></i> {movie.likeCount}</div>
-                                        <div className="icon-comment"><i className="fa-solid fa-comment"></i> {movie.commentCount}</div>
-                                    </div>
-                                    <span className="center rating"> 
-                                        <Rating rating={movie.rating} />
-                                    </span>
-                                    <span className=" center duration">{ parseDuration(movie.duration) }</span>
-                                    <span className="center year">{movie.year}</span>
-                                </div>
-
-                                <div className="cont description">
-                                    <span className="description-info">{movie.description}</span>
-                                    <div className="genrer">
-                                        <p>Categoria:
-                                        <a> {movie.genrers && movie.genrers.map( (genrer, index) =>{
-                                        if(index === movie.genrers.length - 1) return genrer.name
-                                        return genrer.name + ', '
-                                        })}</a></p>
-                                    </div>
-                                    <div className="studio">
-                                        <p>Studio: <a>{movie.studio && movie.studio.name} </a></p>
-                                    </div>
-                                    <div className="producer">
-                                        <p>Producer: <a>{movie.studio && movie.studio.producer.name}</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <TopMovies />
-                    </div>
-                    <WatchVideo movie={movie} type={'Movie'} />
+                        <img className="fondo-movie" src={movie.imgURL} />
+                        <div className="columns-container"> 
+                                <CardGrid data={movie} />
+                                <TopMovies />
+                        </div>
+                        <WatchVideo movie={movie} type={'Movie'} />
                     </>
                 )
             }

@@ -4,7 +4,7 @@ import { parseDuration } from '../../utils/parse'
 import Rating from '../Rating/Rating'
 import { useState } from 'react'
 
-export default function Card({item}) {
+export default function Card({item, type}) {
     const [hovered, setHovered] = useState(false)
 
     function handleMouseEnter() {
@@ -24,7 +24,7 @@ export default function Card({item}) {
                         <main>
                             <div className='card-text'>
                             <h3>{item.title}</h3>
-                            <p> {parseDuration(item.duration)} - {item.year}  </p>
+                            <p> {type === 'movie' ? parseDuration(item.duration) : `Seasons ${item.seasons}`} - {item.year}  </p>
                             <p>Genrers: {item.genrers.map( (genrer, index) =>{
                                 if(index === item.genrers.length - 1) return genrer.name
                                 return genrer.name + ', '

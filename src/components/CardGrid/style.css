@@ -1,0 +1,215 @@
+.Fondo *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.Movies h1{
+    text-align: center;
+    margin-bottom: 24px;
+    background: linear-gradient(to right,#000000, #000646,#000000);
+    border-radius: 12px;
+    width: 40%;
+    font-size: 32px;
+}
+
+.Movies .titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-movie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: text;
+}
+
+.alert-movie h1 {
+    background: linear-gradient(to right,#000000, #A6192E,#000000);
+    border-radius: 12px;
+}
+
+.Fondo{
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.columns-container{
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.column-2{
+    display: flex;
+    background-color: red;
+    flex:1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.fondo-movie{
+    position: absolute;
+    z-index: -1;
+    filter: blur(1.5px) brightness(10%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+.contenedor-movie {
+    background-color: #0002159c;
+    border-radius: 8px;
+    box-shadow:4px 4px 8px #000ea9;
+    max-width: 720px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns:repeat(9, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    color: #fff;
+}
+
+.cont {
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.parte {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 4px;
+    border-radius: 16px;
+    background-color: #00064b4d;
+    box-shadow: 4px 4px 4px #000435;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    
+    gap: 8px;
+} 
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (min-width:1024px) {
+    
+    .billboard {
+        grid-column: 1/4;
+        grid-row: 1/10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .picture{
+        width: calc(100% - 10px);
+        border-radius: 8px;
+        box-shadow: 4px 4px 8px #000000;
+    }
+
+    .picture:hover {
+        box-shadow: 4px 4px 8px #464646;
+    }
+
+    .movie {
+        font-size: 14px;
+        grid-column: 4/10;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: auto;
+    }
+    .head {
+        grid-column: 1/4;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .titulo {
+        font-size: 32px;
+        order: 1;
+        flex: 1;
+    }
+    
+    .rating {
+        grid-row: 2/2;
+    }
+    .duration {
+        font-weight: bold;
+    }
+    .year {
+        font-weight: bold;
+    }
+    .description {
+        font-size: 16px;
+        padding: 4px;
+        grid-column: 4/10;
+        grid-row: 2/10;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: 2,1fr;
+        gap: 10px;
+    }
+    
+    .description-info {
+        overflow: auto;
+        grid-column: 1/5;
+    }
+    
+    .genrer {
+        grid-column: 1/2;
+    }
+    .genrer p {
+        font-weight: bold;
+    }
+    .genrer a {
+        font-weight: normal;
+    }
+    .studio {
+        grid-column: 2/3;
+        display: grid;
+    }
+    .studio p {
+        font-weight: bold;
+    }
+    .studio a {
+        font-weight: normal;
+    }
+
+    .producer {
+        grid-column:3/4 ;
+    }
+
+    .producer p {
+        font-weight: bold;
+    }
+    .producer a {
+        font-weight: normal;
+    }
+
+    .like {
+        font-size: 14px;
+        order: 2;
+    }
+    .icon-comment {
+        font-size: 14px;
+        order: 3;
+    }
+    
+}

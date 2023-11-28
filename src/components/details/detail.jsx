@@ -1,16 +1,14 @@
-import './detail.css'
-import { Link } from 'react-router-dom';
+import './detail.css';
 
-export default function Detail({item, type}) {
-    console.log(type);
+export default function Detail({item}) {
 
     return (
         <>
             <div className="detail">
                 {item.imgURL &&             
-                <a className="detail-img">
+                <div className="detail-img">
                     <img src={item.imgURL} alt={item.name}></img>
-                </a>}
+                </div>}
                 <div className="detail-info">
                     <h1>{item.name}</h1>
                     <p>{item.description}</p>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Footer.css"
+import { company } from "../../../config/defaultconfig";
 
 export default function FooterPage() {
     const [scroll, setScroll] = useState(false);
@@ -21,8 +22,10 @@ export default function FooterPage() {
                     top: 0,
                     behavior: 'smooth'
                 })}}   className={scroll ? "FlechaUp" : '' } > <i className="fas fa-arrow-up flechaUp"></i></a>
-                <p>&copy; {new Date().getFullYear() } Video JJ | Team Developer</p>
-                <a href="mailto:jeyllomsandoval@gmail.com" className="soport">Contacto</a>
+                <div className="footer-info">
+                    <p>&copy; {new Date().getFullYear() } {company.name} | Team Developer</p>
+                    <a href="mailto:josewx324@gmail.com" className="soport">Contacto</a>
+                </div>
             </footer>
     )
 }

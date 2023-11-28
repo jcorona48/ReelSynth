@@ -2,6 +2,8 @@ import './menu-left.css';
 import { Link } from "react-router-dom";
 import { useState, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { company } from '../../../../config/defaultconfig';
+
 export default function ShowMenuLeft(){
     const [setInput] = useState(false);
     const navigate = useNavigate();
@@ -70,9 +72,10 @@ export default function ShowMenuLeft(){
                 </div>
                 )}
             </div>
-            <div className="container-logo">
-                <i className='fas fa-camera-movie' /><a className="logo">VIDEO JJ</a>
-            </div>
+            <Link to="/" className="container-logo">
+                <img src={company.imgURL} alt={company.name} className="company-logo"/>
+                <h1 className='company-name'>{company.name}</h1>
+            </Link>
         </div>
     )
 }

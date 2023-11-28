@@ -5,6 +5,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Movies from './pages/Movies'
 import Series from './pages/Series'
+import Serie from './pages/Serie'
+import Season from './pages/Season'
 import Navbar from './components/Navbar/Navbar'
 import Movie from './pages/Movie'
 import Genrers from './pages/Genrers'
@@ -34,9 +36,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/movies" element={<Movies />} />
-              <Route path="/series" element={<Series />} />
               <Route path="/movie/:title" element={<Movie />} />
-              <Route path="/series" element={<About />} />
+              <Route path="/series" element={<Series />} />
+              <Route path="/serie/:title" element={<Serie />} />
+              <Route path="/serie/:title/:season" element={<Season />} />
               <Route path="/genrers" element={ <Genrers/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />

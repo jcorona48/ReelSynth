@@ -70,6 +70,7 @@
 }
 
 #boton-session img {
+    object-fit: cover;
     width: 88%;
     height: 88%;
     border-radius: 50%;

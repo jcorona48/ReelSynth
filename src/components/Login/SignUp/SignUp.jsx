@@ -75,7 +75,7 @@ export default function SignUp(){
                 <input name="firstName" type="text" placeholder="Nombre" className="input"/>
                 <input name="lastName" type="text" placeholder="Apellido" className="input"/>
                 <select name="countrys" id="" required className="input" defaultValue="country">
-                    <option disabled value="country" >Selecciona tu pais</option>
+                    <option disabled value="country" className="country">Selecciona tu pais</option>
                     {
                         countrys.map((country) => (
                             <option key={country.id} value={country.name}>{country.name}</option>

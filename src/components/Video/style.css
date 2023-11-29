@@ -51,3 +51,15 @@
     font-size: 40px;
   }
   
+
+  @media screen and (max-width: 790px) {
+    .container-movie-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      gap: 8px;
+    }
+    
+}

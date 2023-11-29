@@ -95,9 +95,11 @@ const Comments = ({ type, movie }) => {
     {
       comments != [] && comments && (
         <>
-        <form onSubmit={handleSubmit} className='comment-input'>
-          <input type="text" placeholder='Add your comment' name='comment' autoComplete='off' />
-        </form>
+        <div className="container-input">
+          <form onSubmit={handleSubmit} className='comment-input'>
+            <input type="text" placeholder='Add your comment' name='comment' autoComplete='off' />
+          </form>
+        </div>
         <div className='comment-container'>
           {
             comments.map( comment => (

@@ -80,3 +80,9 @@
 .dropdown a:hover, .dropdown a:focus {
     font-size: 18px; 
 }
+
+@media screen and (max-width: 790px) {
+    .container-center {
+        display: none;
+    }
+}

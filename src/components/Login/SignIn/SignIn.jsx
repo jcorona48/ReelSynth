@@ -72,7 +72,7 @@ export default function SignIn(){
                     <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                 </div>
                 <span>Inicia Sesion con tu Correo/Usuario y Contraseña</span>
-                <input type="text" placeholder="Correo Electronico / Username" name="userName" autoCorrect="off" required />
+                <input type="text" placeholder="Correo / Username" name="userName" autoCorrect="off" required />
                 <input type="password" placeholder="Contraseña" name="password" required />
                 <a href="#">Haz olvidado tu Contraseña?</a>
                 <button type="submit">Iniciar Sesion</button>

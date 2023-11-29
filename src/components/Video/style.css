@@ -5,6 +5,7 @@
     justify-content: center;
     width: 100%;
     padding: 0 10px;
+    margin-bottom: 30px;
   }
   
   .watch-video {
@@ -47,10 +48,13 @@
     gap: 50px;
   }
 
-  h2 {
-    font-size: 40px;
+  .container-movie-action h2 {
+    font-size: 30px;
   }
   
+  .Titulo-number-episode {
+    padding: 6px 8px;
+  }
 
   @media screen and (max-width: 790px) {
     .container-movie-action {
@@ -60,6 +64,10 @@
       flex-direction: column;
       width: 100%;
       gap: 8px;
+    }
+
+    .container-movie-action h2 {
+      font-size: 20px;
     }
     
 }

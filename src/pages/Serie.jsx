@@ -7,7 +7,6 @@ import TopSeries from "../components/TopSeries/TopSeries";
 import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
 import SeasonList from "../components/SeasonList/SeasonList";
-import Season from "../components/Seasons/Season";
 
 
 const query = gql`
@@ -35,18 +34,7 @@ const query = gql`
     }
 `;
 
-const querySeasons = gql`
-    query GetSeasons($input: inputSeason) {
-        getSeasons(input: $input) {
-            description
-            id
-            likeCount
-            number
-            title
-            episodesCount
-    }
-}
-`;
+
 
 
 
@@ -65,18 +53,10 @@ export default function Serie() {
         }
     })
 
-    const { data: dataSeasons } = useQuery(querySeasons, {
-        variables: {
-            input: {
-                serie: serie?.id
-            }
-        }
-    })
 
     useEffect( () => {
         if(data?.getSeries && data?.getSeries.length > 0){
             setSerie(data.getSeries[0])
-            console.log(data.getSeries[0])
         }
     }, [data])
 
@@ -97,14 +77,8 @@ export default function Serie() {
                         </div>
                         
                         <div style={{width: '100%', maxWidth: '1080px'}}>
-                            {dataSeasons && dataSeasons?.getSeasons && dataSeasons.getSeasons.map(season => {
-                                return (
-                                    <div key={season.id}>
-                                        <SeasonList />
-                                    </div>
-                                )
-                            })
-                            }
+                            <SeasonList serie={serie} />
+                           
                             
                             <Comments movie={serie} type={'Serie'} />
                         </div>

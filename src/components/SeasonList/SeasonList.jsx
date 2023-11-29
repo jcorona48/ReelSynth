@@ -16,8 +16,15 @@ const querySeasons = gql`
 }
 `;
 
-export default function SeasonList() {
-    const { data: seasons, loading: loadingSeasons, error: errorSeasons } = useQuery(querySeasons)
+export default function SeasonList({serie}) {
+    const { data: seasons, loading: loadingSeasons, error: errorSeasons } = useQuery(querySeasons, {
+        variables: {
+            input: {
+                serie: serie?.id
+            }
+        }
+    
+    })
     return (
         <div className='SeasonList'>
             <>
@@ -29,7 +36,7 @@ export default function SeasonList() {
                     errorSeasons && <h1>Error...{errorSeasons.message}</h1>
                 }
                 {
-                    seasons?.getSeasons && seasons?.getSeasons.length > 0 ? <Seasons items={seasons.getSeasons} type='seasons' /> : <h1 className='alert-genrers'>No hay seasons</h1>
+                    seasons?.getSeasons && seasons?.getSeasons.length > 0 ? <Seasons items={seasons.getSeasons} type='season' /> : <h1 className='alert-genrers'>No hay seasons</h1>
                 }
             </>
         </div>

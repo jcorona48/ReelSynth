@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 export default function Season({item, type}) {
 
     return (
-        <Link className='container-season' to={`/${type}/${item.name}`}>
+        <Link className='container-season' to={`${type}/${item.number}`}>
             <main className='container-season-detail'>
                 <div className='season-detail'>
                     <h1>{item.title}</h1>
                     <h2>{item.description}</h2>
                     <div className="season-info">
-                        <h4>Season {item.number}</h4>
-                        <h4>Epidoses: {item.episodesCount}</h4>
+                        <h4>{type} {item.number}</h4>
+                        { type === 'Season' ? <h4>Epidoses: {item.episodesCount}</h4> : null } 
                     </div>
                 </div>
                 <div className='season-icon'>

@@ -7,7 +7,6 @@
     height: fit-content;
     text-decoration: none;
     position: relative;
-    margin: 60px 0;
 }
 
 .container-season-detail {
@@ -20,10 +19,8 @@
     gap: 16px;
     width: 100%;
     height: fit-content;
-    margin: 8px 0 60px 0;
     padding: 8px 16px;
     color: #fff;
-    position: absolute;
     transition: transform 0.5s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 

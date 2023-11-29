@@ -1,7 +1,7 @@
 import './Seasons.css';
 import Season from '../Seasons/Season.jsx';
 
-export default function Seasons({items, type='seasons'}) {
+export default function Seasons({items, type='season'}) {
     return (
         <div className="Seasons">
             {items.map((item) => (

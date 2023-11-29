@@ -62,3 +62,35 @@
     width: fit-content;
     height: fit-content;
 }
+
+@media screen and (max-width: 790px) {
+    .container-input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+    
+    .comment-input{
+        display: flex;
+        width: 96%;
+        height: 40px;
+    }
+    .comment-input:hover {
+        border: 2px solid  #fff;
+        border-radius: 80px;
+    }
+    
+    .comment-input input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-left: 10px;
+        min-height: 30px;
+        border: transparent;
+        border-radius: 80px;
+        
+    }
+    
+}

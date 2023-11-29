@@ -22,6 +22,7 @@ import Footer from './components/Footer/footer'
 import { useContext } from 'react'
 import { AlertsContext } from './Context/alertContext'
 import Alert from './components/Alert/Alert'
+import Episode from './pages/Episode'
 function App() {
 
   const {alerts} = useContext(AlertsContext)
@@ -41,6 +42,7 @@ function App() {
               <Route path="/series" element={<Series />} />
               <Route path="/serie/:title" element={<Serie />} />
               <Route path="/serie/:title/season/:season" element={<Season />} />
+              <Route path="/serie/:title/season/:season/episode/:episode" element={<Episode />} />
               <Route path="/genrers" element={ <Genrers/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />

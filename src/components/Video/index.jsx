@@ -3,7 +3,6 @@ import Parse from 'html-react-parser';
 import './style.css';
 import Hosts from './Hosts';
 import { useQuery, gql } from "@apollo/client";
-import Comments from '../Comments'
 import Like from '../Like/like.jsx';
 import MakeRating from '../Rating/MakeRating.jsx';
 
@@ -28,7 +27,6 @@ const WatchVideo = ({ type, movie }) => {
   
   const [videos, setVideos] = useState([]);
   const [video, setVideo] = useState(videos[0]);
-  const [comments, setComments] = useState([])
 
   const { data, loading, error } = useQuery(query, {
     variables: {
@@ -43,7 +41,6 @@ const WatchVideo = ({ type, movie }) => {
 
   useEffect( () =>{
     if(data && data?.getVideos){
-      setComments(data?.getComments)
       setVideos(data?.getVideos)
       setVideo(data?.getVideos[0])
     }

@@ -169,3 +169,10 @@
     }
     
 }
+
+@media screen and (max-width: 390px) {
+    .company-name {
+        display: none;
+    }
+    
+}

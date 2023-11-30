@@ -51,7 +51,6 @@ const querySeasons = gql`
 export default function Season() {
 
     const { title, season: seasonNumber} = useParams()
-    console.log(seasonNumber)
     const titleTransformed = title.replace(/-/g, ' ')
     const [serie, setSerie] = useState(null)
     const [season, setSeason] = useState(null)
@@ -104,17 +103,18 @@ export default function Season() {
                         </div>
                         
                         <div style={{width: '100%', maxWidth: '1080px'}}>
-                            <div style={{width: '100px'}} >
-                                <Like movie={season} type={'Season'}></Like>
-                            </div>
+                            
                             {
-                                season && <> 
-                                            
+                                season ? <> 
+                                            <div style={{width: '100px'}} >
+                                                <Like movie={season} type={'Season'}></Like>
+                                            </div>
                                             <EpisodeList season={season} />
 
                                             <Comments movie={season} type={'Season'} />
 
                                         </> 
+                                        : <h1>Not Found</h1>
                             }
                             
                             

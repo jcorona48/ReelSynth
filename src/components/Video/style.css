@@ -36,6 +36,8 @@
   .container-movie-action {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
     flex-direction: row;
     width: 100%;
     gap: 60px;

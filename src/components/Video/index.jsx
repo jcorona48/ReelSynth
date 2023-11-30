@@ -59,11 +59,9 @@ const WatchVideo = ({ type, movie }) => {
         <div className="container-movie-action">
           <h2>{movie?.title}</h2>
           <div className="movie-action">
+            
+            <MakeRating movie={movie} type={type} />
             <Like movie={movie} type={type}  />
-
-            {/* <like likeCount={movie?.likeCount} setLikeCount={movie?.setLikeCount} like={movie?.like} setLike={movie?.setLike} dislike={movie?.dislike} setDislike={movie?.setDislike} /> */}
-          
-            <MakeRating />
           </div>
         </div>
       </div>

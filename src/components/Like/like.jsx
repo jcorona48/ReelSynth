@@ -42,7 +42,7 @@ function Like({movie, type}) {
 
         const {addAlert} = useContext(AlertsContext)
 
-        const [deleteLike, deleteMutation] = useMutation(deleteLikeMutation);
+        const [deleteLike] = useMutation(deleteLikeMutation);
 
         const { data } = useQuery(query, {
           variables: {

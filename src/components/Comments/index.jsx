@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import { UserContext }  from '../../Context/userContext.jsx'
 import './style.css';
 import { useQuery, gql, useMutation } from "@apollo/client";
+import { AlertsContext } from '../../Context/alertContext';
 
 
 const query = gql`
@@ -41,7 +42,8 @@ const mutationquery = gql`
 const Comments = ({ type, movie }) => {
   const { token } = useContext(UserContext)
   const [comments, setComments] = useState([])
-  const [Comments, mutation] = useMutation(mutationquery)
+  const [Comments] = useMutation(mutationquery)
+  const { addAlert } = useContext(AlertsContext)
   const { data, loading } = useQuery(query, {
     variables: {
         input: {
@@ -64,6 +66,7 @@ const Comments = ({ type, movie }) => {
   
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if(!token) return addAlert('You must be logged in to comment', 'error')
     const form = new FormData(e.target)
     const data = Object.fromEntries(form)
     const { comment } = data

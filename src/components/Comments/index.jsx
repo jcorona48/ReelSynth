@@ -90,6 +90,7 @@ const Comments = ({ type, movie }) => {
     }
 
     e.target.reset()
+    addAlert('Comment added', 'success')
   }
 
   return (

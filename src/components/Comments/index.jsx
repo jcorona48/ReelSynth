@@ -3,7 +3,7 @@ import { UserContext }  from '../../Context/userContext.jsx'
 import './style.css';
 import { useQuery, gql, useMutation } from "@apollo/client";
 import { AlertsContext } from '../../Context/alertContext';
-
+import { defaultImgUser } from '../../../config/defaultconfig.js';
 
 const query = gql`
     query GetComments($input: inputComment) {
@@ -109,7 +109,7 @@ const Comments = ({ type, movie }) => {
             comments.map( comment => (
               <div key={comment.id} className='comment'>
                 <div className="comment-user">
-                  <img src={comment.user.imgURL || "https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg"} alt={comment.user.userName} />
+                  <img src={comment.user.imgURL || defaultImgUser} alt={comment.user.userName} />
                   <h3>{comment.user.userName}</h3>
                 </div>
                 <p>{comment.content}</p>

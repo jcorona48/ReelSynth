@@ -3,6 +3,7 @@ import { useContext, useEffect } from 'react';
 import { UserContext } from '../../Context/userContext';
 import { useMutation, gql } from '@apollo/client';
 import { AlertsContext } from '../../Context/alertContext';
+import { defaultImgUser } from '../../../config/defaultconfig.js';
 
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/db0ahcf7o/image/upload'
 const CLOUDINARY_UPLOAD_PRESET = 'ryrlhihg'
@@ -71,13 +72,16 @@ export default function ProfileUser() {
                         <article className="profile-info">
                             <p>{user.firstName}</p>
                             <p>{user.lastName}</p>
-                            <p>{user.country.name}</p>
+                            {
+                                user?.country?.name && <p>{user?.country?.name}</p>
+                            }
+                            
                         </article>
                     </div>
                     <div className="perfil-usuario-header">
                         <div className="perfil-usuario-portada">
                             <div className="perfil-usuario-avatar">
-                                <img src={user.imgURL} alt="img-avatar"/>
+                                <img src={user.imgURL || defaultImgUser} alt="img-avatar"/>
                                 <form onSubmit={handleSubmit} className="boton-avatar">
                                     <label htmlFor="file"> <i className='fa-regular fa-image'></i></label>
                                     <input  type="file" name="file" id='file' onChange={handleSubmit}></input>

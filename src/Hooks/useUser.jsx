@@ -16,8 +16,8 @@ const query = gql`
             }
             imgURL
             country {
-            id
-            name
+                id
+                name
             }
             
         }

@@ -1,5 +1,5 @@
 
-import { useState, createContext, useEffect, useContext } from "react";
+import { createContext, useEffect, useContext } from "react";
 import useUser from "../Hooks/useUser";
 import useToken from "../Hooks/useToken";
 import { AlertsContext } from "./alertContext";

@@ -62,7 +62,7 @@ export default function MakeRating({movie, type}) {
     
 
     const handleClick = async (starNumber) => {
-        if(!token) return addAlert('You must be logged in to like', 'error')
+        if(!token) return addAlert('You must be logged in to rate', 'error')
 
         if(rating){
             const updatedRate = await updateRate({

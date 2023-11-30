@@ -118,25 +118,6 @@ const Comments = ({ type, movie }) => {
           }
         </div>
         </>
-       /*  <div className="comments-container">
-          <div className="comments">
-            <h2>Comentarios</h2>
-            <input type="text" placeholder='Add your comment'/>
-              <div className="comments-list">
-                {
-                  comments.map( comment => (
-                    <div className="comment" key={comment.id}>
-                      <div className="comment-user">
-                        <img src={comment.user.imgURL} alt={comment.user.userName} />
-                        <h3>{comment.user.userName}</h3>
-                      </div>
-                      <p>{comment.content}</p>
-                    </div>
-                  ))
-                }
-              </div>
-          </div>
-        </div> */
       )
     }
     </>

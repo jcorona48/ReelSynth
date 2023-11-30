@@ -4,7 +4,6 @@ import { UserContext } from '../../Context/userContext';
 import { useMutation, gql } from '@apollo/client';
 import { AlertsContext } from '../../Context/alertContext';
 
-
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/db0ahcf7o/image/upload'
 const CLOUDINARY_UPLOAD_PRESET = 'ryrlhihg'
 
@@ -63,7 +62,6 @@ export default function ProfileUser() {
 
     }
 
-    console.log(user)
     return ( <> {user &&         
             <div className='container-profile'>
                 <h1>Profile Data</h1>
@@ -81,7 +79,8 @@ export default function ProfileUser() {
                             <div className="perfil-usuario-avatar">
                                 <img src={user.imgURL} alt="img-avatar"/>
                                 <form onSubmit={handleSubmit} className="boton-avatar">
-                                    <input className='fa-regular fa-image' type="file" name="file" onChange={handleSubmit}></input>
+                                    <label htmlFor="file"> <i className='fa-regular fa-image'></i></label>
+                                    <input  type="file" name="file" id='file' onChange={handleSubmit}></input>
                                 </form>
                             </div>
                         </div>

@@ -47,9 +47,19 @@
     gap: 10px;
 }
 
-.boton-avatar input  {
-    text-decoration: ;
+.boton-avatar input {
+    display: none;
 }
+
+.boton-avatar label {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
 
 .fa-image {
     font-size: 24px;

@@ -138,7 +138,7 @@ export default function Episode() {
                         <div style={{width: '100%', maxWidth: '1080px'}}>
                             {
                                 episode && <> 
-                                            <h1>Episodio {episode.number}</h1>
+                                            <h1 className="Titulo-number-episode">Episodio {episode.number}</h1>
                                             <WatchVideo movie={episode} type={'Episode'} />
 
                                             <Comments movie={episode} type={'Episode'} />

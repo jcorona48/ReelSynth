@@ -76,13 +76,15 @@ export default function ProfileUser() {
                             <p>{user.country.name}</p>
                         </article>
                     </div>
-                    <div className="container-img">
-                        <div className="profile-image">
-                            <a><img src={user.imgURL || 'https://static.vecteezy.com/system/resources/previews/011/948/549/original/profile-does-not-exist-icon-customer-white-contour-marked-with-red-line-remote-avatar-erased-from-online-memory-graphic-line-design-social-media-communication-and-correspondence-character-vector.jpg'} alt="Profile" /></a>
+                    <div className="perfil-usuario-header">
+                        <div className="perfil-usuario-portada">
+                            <div className="perfil-usuario-avatar">
+                                <img src={user.imgURL} alt="img-avatar"/>
+                                <form onSubmit={handleSubmit} className="boton-avatar">
+                                    <input className='fa-regular fa-image' type="file" name="file" onChange={handleSubmit}></input>
+                                </form>
+                            </div>
                         </div>
-                        <form className="container-change-img" onSubmit={handleSubmit}>
-                            <input type="file" name="file" onChange={handleSubmit} />
-                        </form>
                     </div>
                     <div className='container-user'>
                         <h2>User Information</h2>

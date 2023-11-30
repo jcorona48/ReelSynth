@@ -7,6 +7,7 @@ import TopSeries from "../components/TopSeries/TopSeries";
 import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
 import EpisodeList from "../components/EpisodesList/EpisodeList";
+import Like from "../components/Like/like";
 
 const query = gql`
     query GetSeries($input: inputSerie) {
@@ -103,9 +104,12 @@ export default function Season() {
                         </div>
                         
                         <div style={{width: '100%', maxWidth: '1080px'}}>
+                            <div style={{width: '100px'}} >
+                                <Like movie={season} type={'Season'}></Like>
+                            </div>
                             {
                                 season && <> 
-                                
+                                            
                                             <EpisodeList season={season} />
 
                                             <Comments movie={season} type={'Season'} />

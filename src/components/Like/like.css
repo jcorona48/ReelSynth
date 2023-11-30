@@ -1,0 +1,26 @@
+
+
+.like-button img{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.like-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 5px 0;
+    border-bottom: 1px solid transparent;
+    gap: 10px;
+}
+
+.like-button:hover {
+
+    border-bottom: 1px solid #d8d8d8;
+    
+
+}

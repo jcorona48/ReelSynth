@@ -1,0 +1,16 @@
+
+.Favorites h1{
+    text-align: center;
+    margin-bottom: 24px;
+    background: linear-gradient(to right,#000000, #000646,#000000);
+    border-radius: 12px;
+    width: 40%;
+    font-size: 32px;
+}
+
+
+.Titulo-Favorites {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

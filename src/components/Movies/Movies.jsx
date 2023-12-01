@@ -22,28 +22,38 @@ const GET_Movies = gql`
 `;
 
 
-export default function Movies({ input = {} }) {
+export default function Movies({ input = {}, moviesDefault = [] }) {
 
   const { data: movies, loading: loadingMovies, error: errorMovies } = useQuery(GET_Movies, {
     variables: {
       input
     }
   });
+
+
   return (
     <div className="Movies">
           <>
             <div className="titulo">
               <h1 id="titulo">Movies</h1>
             </div>
+
             {
-              loadingMovies && <h1>Loading...</h1>
+              moviesDefault.length > 0 ? <Cards items={moviesDefault} /> : (
+                <>
+                {
+                  loadingMovies && <h1>Loading...</h1>
+                }
+                {
+                  errorMovies && <h1>Error...{errorMovies.message}</h1>
+                }
+                {
+                  movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <div className="alert-movie"><h1>No hay Movies</h1></div>
+                }
+                  </>
+              )
             }
-            {
-              errorMovies && <h1>Error...{errorMovies.message}</h1>
-            }
-            {
-              movies?.getMovies && movies?.getMovies.length > 0 ? <Cards items={movies.getMovies} /> : <div className="alert-movie"><h1>No hay Movies</h1></div>
-            }
+            
           </>
     </div>
   );

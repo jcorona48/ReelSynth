@@ -22,7 +22,7 @@ const Get_Series = gql`
   }
 `;
 
-export default function Series({ input = { } }) {
+export default function Series({ input = { }, seriesDefault = [] }) {
   const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(Get_Series, {
     variables: {
       input
@@ -34,6 +34,9 @@ export default function Series({ input = { } }) {
         <div className="titulo">
           <h1 id='titulo'>Series</h1>
         </div>
+        {
+          seriesDefault.length > 0 ? <Cards items={seriesDefault} type={'serie'} /> : (<>
+          
           {
             loadingSeries && <h1>Loading...</h1>
           }
@@ -43,6 +46,9 @@ export default function Series({ input = { } }) {
           {
             series?.getSeries && series?.getSeries.length > 0 ? <Cards items={series.getSeries} type={'serie'} /> : <div className="alert-series"><h1>No hay series</h1></div>
           }
+          </>)
+        }
+          
       </>
     </div>
   );

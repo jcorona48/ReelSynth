@@ -1,6 +1,6 @@
 import './profile.css'
 import { useContext, useEffect } from 'react';
-import { UserContext } from '../../Context/userContext';
+import { UserContext } from '../../Context/userContext.jsx'
 import { useMutation, gql } from '@apollo/client';
 import { AlertsContext } from '../../Context/alertContext';
 import { defaultImgUser } from '../../../config/defaultconfig.js';
@@ -21,7 +21,7 @@ export default function ProfileUser() {
 
     const {user, setUser, token} = useContext(UserContext)
     const {addAlert} = useContext(AlertsContext)
-    
+
     const navigate = useNavigate()
 
     const [UpdateUser, mutation] = useMutation(query)
@@ -31,14 +31,14 @@ export default function ProfileUser() {
             addAlert(mutation.error.message, 'error')
         }
 
-    },[user,mutation.loading])
+    },[user,mutation, addAlert, mutation.error])
 
     useEffect(()=> {
         if(!user && !token){
             navigate('/')
             addAlert('You must be logged in', 'error')
         }
-    },[])
+    },[navigate, user, token, addAlert])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

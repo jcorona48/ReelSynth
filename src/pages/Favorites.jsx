@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import useSEO from "../Hooks/useSEO";
-import { UserContext } from "../Context/UserContext";
+import { UserContext } from "../Context/userContext";
 import { gql, useQuery } from "@apollo/client";
 import "../components/Favorite/style.css";
 import Cards from "../components/Cards/Cards.jsx";
@@ -67,7 +67,7 @@ export default function Follow() {
       navigate('/')
     }
 
-  }, [data, error, loading])
+  }, [data, error, loading, addAlert, navigate])
 
 
 
@@ -88,7 +88,7 @@ export default function Follow() {
       }
 
       {
-        !likes && <div className="alert-movie"><h1>No hay Favorites</h1></div>
+      data?.getLikes && data?.getLikes.length == 0  &&  <div className="alert-movie"><h1>No hay Favorites</h1></div>
       }
     </div>
   );

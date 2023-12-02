@@ -14,3 +14,19 @@
     align-items: center;
     justify-content: center;
 }
+
+.Favorites .alert-movie h1{
+    background: linear-gradient(to right,#000000, #A6192E,#000000);
+    border-radius: 12px;
+
+}
+
+.Favorites .alert-movie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    cursor: text;
+}

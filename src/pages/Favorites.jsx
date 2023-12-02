@@ -1,11 +1,11 @@
 import { useContext, useState, useEffect } from "react";
 import useSEO from "../Hooks/useSEO";
-import MoviesCards from "../components/Movies/Movies";
-import SeriesCard from "../components/Series/Series";
 import { UserContext } from "../Context/UserContext";
 import { gql, useQuery } from "@apollo/client";
 import "../components/Favorite/style.css";
 import Cards from "../components/Cards/Cards.jsx";
+import { AlertsContext } from "../Context/alertContext.jsx";
+import { useNavigate } from "react-router-dom";
 
 
 const query = gql`
@@ -32,10 +32,13 @@ const query = gql`
 `;
 
 export default function Follow() {
+  
   useSEO({ title: "Favorites", description: "Favorites page" });
 
   const { token } = useContext(UserContext)
+  const { addAlert } = useContext(AlertsContext)
 
+  const navigate = useNavigate()
   const [likes, setLikes] = useState(null)
 
 
@@ -54,27 +57,21 @@ export default function Follow() {
   });
   
   useEffect(() => {
-    if (data?.getLikes) {
-      // Separate movies and series
-
-      console.log(data.getLikes)
-
-      const grouped = data.getLikes.reduce((acc, curr) => {
-        const key = curr.entityType;
-        if (!acc[key]) {
-          acc[key] = [];
-        }
-        acc[key].push(curr.entityID);
-        return acc;
-      }, {});
-
-      console.log(grouped)
+    if (data?.getLikes && !loading) {
       setLikes(data.getLikes)
 
     }
-  }, [data])
+
+    if(error){
+      addAlert('You Should be logged', 'error')
+      navigate('/')
+    }
+
+  }, [data, error, loading])
 
 
+
+  
 
   return (
     <div className="Favorites">
@@ -84,6 +81,14 @@ export default function Follow() {
      
       {
         likes && data?.getLikes && <Cards items={likes}  />
+      }
+
+      {
+        loading && <h1>Loading...</h1>
+      }
+
+      {
+        !likes && <div className="alert-movie"><h1>No hay Favorites</h1></div>
       }
     </div>
   );

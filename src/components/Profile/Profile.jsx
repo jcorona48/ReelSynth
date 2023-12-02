@@ -4,6 +4,7 @@ import { UserContext } from '../../Context/userContext';
 import { useMutation, gql } from '@apollo/client';
 import { AlertsContext } from '../../Context/alertContext';
 import { defaultImgUser } from '../../../config/defaultconfig.js';
+import { useNavigate } from 'react-router-dom';
 
 const CLOUDINARY_URL = 'https://api.cloudinary.com/v1_1/db0ahcf7o/image/upload'
 const CLOUDINARY_UPLOAD_PRESET = 'ryrlhihg'
@@ -20,6 +21,8 @@ export default function ProfileUser() {
 
     const {user, setUser, token} = useContext(UserContext)
     const {addAlert} = useContext(AlertsContext)
+    
+    const navigate = useNavigate()
 
     const [UpdateUser, mutation] = useMutation(query)
 
@@ -29,6 +32,13 @@ export default function ProfileUser() {
         }
 
     },[user,mutation.loading])
+
+    useEffect(()=> {
+        if(!user && !token){
+            navigate('/')
+            addAlert('You must be logged in', 'error')
+        }
+    },[])
 
     const handleSubmit = async (e) => {
         e.preventDefault()

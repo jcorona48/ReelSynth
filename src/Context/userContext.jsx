@@ -11,28 +11,26 @@ export default function UserProvider({children}) {
     const {token, setToken, deleteToken} = useToken()
 
     const {user, setUser, loading, setLoading} = useUser(token)
-    
-    const {addAlert} = useContext(AlertsContext)
-
     useEffect(() =>{
         if(!token){
             setUser(null)
         }
-    },[token, setUser])
+    },[token])
 
     useEffect(() =>{
         if(!loading && !user && token){
             deleteToken()
             addAlert('Sesion expirada', 'warning')
         }
-    },[loading, user, token])
+    },[loading, user])
 
     useEffect(() =>{
         if(localStorage.getItem('x-token')){
             setToken(localStorage.getItem('x-token'))
         }
-    },[setToken])
+    },[])
 
+    const {addAlert} = useContext(AlertsContext)
 
 
     return (

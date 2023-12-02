@@ -13,7 +13,7 @@ export default function UserProvider({children}) {
     const {user, setUser, loading, setLoading} = useUser(token)
     
     const {addAlert} = useContext(AlertsContext)
-    
+
     useEffect(() =>{
         if(!token){
             setUser(null)
@@ -25,7 +25,7 @@ export default function UserProvider({children}) {
             deleteToken()
             addAlert('Sesion expirada', 'warning')
         }
-    },[loading, user, token, deleteToken, addAlert])
+    },[loading, user, token])
 
     useEffect(() =>{
         if(localStorage.getItem('x-token')){

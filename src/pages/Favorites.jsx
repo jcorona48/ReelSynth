@@ -67,7 +67,7 @@ export default function Follow() {
       navigate('/')
     }
 
-  }, [data, error, loading, addAlert, navigate])
+  }, [data, error, loading])
 
 
 

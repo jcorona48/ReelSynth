@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: column;
     background-color: #00000042;
-    padding: 8px 20px;
+    padding: 8px 20px 16px;
     border-radius: 12px;
     gap: 8px;
 }
@@ -96,7 +96,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 8px 20px;
+    padding: 8px 20px 16px;
     border-radius: 12px;
     gap: 8px;
 }

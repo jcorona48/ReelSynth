@@ -1,0 +1,124 @@
+.container-company-detail {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-detail {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 60px;
+    background: linear-gradient(to right, rgb(0, 1, 68),#003253);
+    border-radius: 28px;
+    gap: 20px;
+}
+
+.company-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.company-info img {
+    width: 350px;
+    object-fit: cover;
+}
+
+.company-info h1 {
+    font-size: 112px;
+    padding-right: 62px;
+}
+
+.company-desc {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 20px;
+    background: linear-gradient(to right,#14547c, rgb(16, 114, 67));
+    border-radius: 12px;
+}
+
+.company-column-obj {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to right,#313131, #252525);
+    border-radius: 12px;
+    padding: 20px 30px;
+    gap: 30px;
+}
+
+.column-about {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #00000042;
+    padding: 8px 20px;
+    border-radius: 12px;
+    gap: 8px;
+}
+
+.company-obj-general {
+    transition: background-color 0.3s ease-in-out;
+}
+.company-obj-general:hover {
+    background-color:#14547c;
+    transition: all 0.3s ease-in-out;
+}
+
+.company-obj-specific {
+    transition: background-color 0.3s ease-in-out;
+}
+.company-obj-specific:hover {
+    background-color: rgb(16, 114, 67);
+    transition: all 0.3s ease-in-out;
+}
+
+.company-column-limit {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 12px;
+    padding: 20px 30px;
+    gap: 30px;
+}
+
+.column-limit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 20px;
+    border-radius: 12px;
+    gap: 8px;
+}
+
+.company-scope-website {
+    transition: background-color 0.3s ease-in-out;
+}
+.company-scope-website:hover {
+    background-color:#147c19;
+    transition: all 0.3s ease-in-out;
+}
+
+.company-limited-website {
+    transition: background-color 0.3s ease-in-out;
+}
+.company-limited-website:hover {
+    background-color: rgb(114, 16, 16);
+    transition: all 0.3s ease-in-out;
+}
+
+.company-detail div div article p {
+    background-color: rgba(49, 49, 49, 0.45);
+    padding: 4px 4px;
+    border-radius: 8px;
+}

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,useMemo } from "react";
 import "./Footer.css"
 import { company } from "../../../config/defaultconfig";
+import { Link } from "react-router-dom";
 
 export default function FooterPage() {
     const [scroll, setScroll] = useState(false);
@@ -15,6 +16,10 @@ export default function FooterPage() {
             
         }
     }, [])
+
+    const optionsFooter = useMemo( () => [
+        { label: "About", value: "about", style: "soport"}
+    ]) ;
     
     return(
             <footer>
@@ -23,8 +28,30 @@ export default function FooterPage() {
                     behavior: 'smooth'
                 })}}   className={scroll ? "FlechaUp" : '' } > <i className="fas fa-arrow-up flechaUp"></i></a>
                 <div className="footer-info">
-                    <p>&copy; {new Date().getFullYear() } {company.name} | Team Developer</p>
-                    <a href="mailto:josewx324@gmail.com" className="soport">Contacto</a>
+                    <article className="footer-left">
+                        <div className="footer-left-logo">
+                            <img src={company.imgURL} alt={company.name} />
+                            <h2>{company.name}</h2>
+                        </div>
+                        <p> {company.description} </p>
+                    </article>
+                    <article className="footer-center">
+                        <p>&copy; {new Date().getFullYear() } {company.name} | Team Developer</p>
+                        {
+                        optionsFooter.map((option) => (
+                            <li key={option.value}>
+                            <Link to={option.value} className='navbar-item-footer'> <i></i> <span className={option.style}> { option.label} </span></Link>
+                            </li>
+                        ))
+                        }
+                        <a href="mailto:josewx324@gmail.com" className="soport">Contacto</a>
+                    </article>
+                    <article className="footer-rigth">
+                        <h2>Aids</h2>
+                        <ul>
+                            <li><a href="/" className="soport">Home</a></li>
+                        </ul>
+                    </article>
                 </div>
             </footer>
     )

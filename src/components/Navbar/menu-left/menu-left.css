@@ -64,12 +64,12 @@
     position: relative;
     text-decoration: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 20px;
     transition: font-size 0.3s;
 }
 
 .left-option li a:hover, .left-option li a:focus {
-    font-size: 20px; 
+    font-size: 22px; 
 }
 
 .left-option li a::after {

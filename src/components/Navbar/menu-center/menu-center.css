@@ -86,3 +86,9 @@
         display: none;
     }
 }
+
+@media screen and (max-width: 1120px) {
+    .container-center {
+        display: none;
+    }
+}

@@ -88,7 +88,7 @@
 .contenedor-movie {
     background-color: #0002159c;
     border-radius: 8px;
-    box-shadow:4px 4px 8px #000ea9;
+    box-shadow:2px 2px 8px #000ea9;
     max-width: 720px;
     padding: 10px;
     display: grid;
@@ -120,6 +120,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.head .titulo {
+    font-size: 26px;
 }
 
 

@@ -205,7 +205,6 @@
 
     .profile-info p, .profile-info-user p {
         overflow: overlay;
-        
     }
 
     .profile-info p::-webkit-scrollbar, .profile-info-user p::-webkit-scrollbar {

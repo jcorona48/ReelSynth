@@ -19,7 +19,7 @@ export default function FooterPage() {
 
     const optionsFooter = useMemo( () => [
         { label: "About", value: "about", style: "soport"}
-    ]) ;
+    ], []) ;
     
     return(
             <footer>

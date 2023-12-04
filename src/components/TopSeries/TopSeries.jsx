@@ -3,8 +3,8 @@ import { useQuery, gql } from "@apollo/client";
 import ContentsOptions from "../ContentOption/ContentsOptions";
 
 const query = gql`
-    query Get_Series {
-        getSeries {
+ query GetTopSeries($top: Int!) {
+   getTopSeries(top: $top) {
             imgURL
             title
             rating
@@ -14,7 +14,11 @@ const query = gql`
 `
 
 export default function TopSeries() {
-    const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(query);
+    const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(query,{
+        variables: {
+            top: 3
+        }
+    });
     return (
         <div>
             <>
@@ -26,7 +30,7 @@ export default function TopSeries() {
                 errorSeries && <h1>Error...{errorSeries.message}</h1>
             }
             {
-                series?.getSeries && series?.getSeries.length > 0 ? <ContentsOptions items={series.getSeries} type="serie"/> : <h1>No hay peliculas</h1>
+                series?.getTopSeries && series?.getTopSeries.length > 0 ? <ContentsOptions items={series.getTopSeries} type="serie"/> : <h1>No hay peliculas</h1>
             }
             </>
         </div>

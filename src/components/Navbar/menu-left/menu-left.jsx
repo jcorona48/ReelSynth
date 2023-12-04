@@ -14,8 +14,11 @@ export default function ShowMenuLeft(){
     const optionsLeft = useMemo( () => [
         { label: "Home", value: "", icon: "fas fa-duotone fa-house" },
         { label: "Movies", value: "movies", icon: "fas fa-film" },
+        { label: "Top Movies", value: "top-movies", icon: "fa-solid fa-fire" },
         { label: "Series", value: "series", icon: "fas fa-tv" },
+        { label: "Top Series", value: "top-series", icon: "fa-solid fa-fire" },
         { label: "Anime", value: "anime", icon: "fas fa-solid fa-wand-sparkles" },
+        { label: "Top Animes", value: "top-animes", icon: "fa-solid fa-fire" },
         { label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection" },
         { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video" },
         { label: "About", value: "about", icon: "fa-solid fa-circle-info" }
@@ -50,7 +53,7 @@ export default function ShowMenuLeft(){
                 <div className="menu-left">
                     <div className="container-lupa-left">
                         <form className="lupa-left" onSubmit={handleSubmit}>
-                            <input type="search" placeholder="Pelicula, serie o anime" className='inputSearch' name='search'/>
+                            <input type="search" placeholder="Movie, serie o anime" className='inputSearch' name='search'/>
                             <button onClick={toggleInput}></button>
                             <i className="fas fa-solid fa-magnifying-glass" style={{color: "#000000",}} />
                         </form>
@@ -66,7 +69,7 @@ export default function ShowMenuLeft(){
                         }
                     </ul>
                     </div>
-                    <span className='message-dev'>Recuerda divertirte y compartir tu experiencia!</span>
+                    <span className='message-dev'>Have fun and share your experience!</span>
                 </div>
                 )}
             </div>

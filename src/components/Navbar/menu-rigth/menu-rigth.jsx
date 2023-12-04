@@ -43,7 +43,7 @@ export default function ShowMenuRigth(){
         <div className="container-rigth">
 
             <form className="lupa" onSubmit={handleSubmit}>
-                <input type="search" placeholder="Pelicula, serie o anime" name='search' className='inputSearch' autoComplete='off'/>
+                <input type="search" placeholder="Movie, serie o anime" name='search' className='inputSearch' autoComplete='off'/>
                 <button type='submit'></button>
                 <i className="fas fa-solid fa-magnifying-glass" style={{color: "#000000",}} />
             </form>

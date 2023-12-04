@@ -20,6 +20,9 @@ import Anime from './pages/Anime'
 import Search from './pages/Search'
 import Studio from './pages/Studio'
 import Footer from './components/Footer/footer'
+import TopMovies from './pages/TopMovies'
+import TopSeries from './pages/TopSeries'
+import TopAnimes from './pages/TopAnimes'
 import { useContext } from 'react'
 import { AlertsContext } from './Context/alertContext'
 import Alert from './components/Alert/Alert'
@@ -40,15 +43,18 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/movies" element={<Movies />} />
               <Route path="/movie/:title" element={<Movie />} />
+              <Route path="/top-movies" element={<TopMovies />} />
               <Route path="/series" element={<Series />} />
               <Route path="/serie/:title" element={<Serie />} />
               <Route path="/serie/:title/season/:season" element={<Season />} />
               <Route path="/serie/:title/season/:season/episode/:episode" element={<Episode />} />
+              <Route path="/top-series" element={<TopSeries />} />
               <Route path="/genrers" element={ <Genrers/>} />
               <Route path="/studio/:id" element={ <Studio/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
               <Route path="/anime" element={ <Anime/>} />
+              <Route path="/top-animes" element={ <TopAnimes/>} />
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/favorites" element={ <Favorites/>} />
               <Route path="/search/:title" element={<Search />} />

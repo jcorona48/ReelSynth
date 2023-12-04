@@ -36,7 +36,7 @@
     background-color: #050035;
     border-radius: 12px;
     width: 300px;
-    height: 600px;
+    height: 620px;
     list-style: none;
     padding: 0;
     transform: translateX(-20px);
@@ -168,6 +168,9 @@
         font-size: 20px;
     }
     
+    .menu-left {
+        width: 290px;    
+    }
 }
 
 @media screen and (max-width: 390px) {

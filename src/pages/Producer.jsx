@@ -43,7 +43,7 @@ console.log(producer)
                 producer?.getProducer ? <Detail item={producer?.getProducer} />: <h1>No hay Productora</h1>
             }
         
-            <Studios/>
+            <Studios input={{producer: id}} />
 
             <MoviesCards input={{producer: id}} />
             

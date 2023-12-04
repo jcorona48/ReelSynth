@@ -3,8 +3,8 @@ import { useQuery, gql } from '@apollo/client'
 import MiniDetails from '../MiniDeatils/details/MiniDetails.jsx';
 
 const GET_Studio = gql`
-    query getStudios {
-        getStudios {
+    query GetStudios($input: inputStudio) {
+    getStudios(input: $input) {
             id
             name
             description
@@ -13,8 +13,15 @@ const GET_Studio = gql`
     }
 `;
 
-export default function Studios() {
-    const { data: studios, loading: loadingStudios, error: errorStudios } = useQuery(GET_Studio)
+export default function Studios({input}) {
+    console.log(input)
+    const { data: studios, loading: loadingStudios, error: errorStudios } = useQuery(GET_Studio,
+        {
+            variables: {
+                input
+            }
+        
+        })
     return (
         <div className='container-Studios'>
             <>

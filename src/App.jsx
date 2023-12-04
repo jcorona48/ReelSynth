@@ -18,6 +18,7 @@ import Genrer from './pages/Genrer'
 import LoginPage from './pages/Login'
 import Anime from './pages/Anime'
 import Search from './pages/Search'
+import Studio from './pages/Studio'
 import Footer from './components/Footer/footer'
 import { useContext } from 'react'
 import { AlertsContext } from './Context/alertContext'
@@ -44,6 +45,7 @@ function App() {
               <Route path="/serie/:title/season/:season" element={<Season />} />
               <Route path="/serie/:title/season/:season/episode/:episode" element={<Episode />} />
               <Route path="/genrers" element={ <Genrers/>} />
+              <Route path="/studio/:id" element={ <Studio/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
               <Route path="/anime" element={ <Anime/>} />

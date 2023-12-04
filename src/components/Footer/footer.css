@@ -72,8 +72,12 @@ footer {
   color: #ffff;
 }
 
+.FlechaUpOff{
+  display: none;
+}
+
 .flechaUp {
-    font-size: 35px;
+    font-size: 30px;
 }
 
 .soport {
@@ -114,6 +118,14 @@ footer {
     z-index: 999;
     transition: background-color 0.3s;
     animation: bounce 3s infinite; /* Animación que hace que la flecha suba y baje */
+  }
+  
+  .FlechaUp div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
   }
   
   .FlechaUp:hover {

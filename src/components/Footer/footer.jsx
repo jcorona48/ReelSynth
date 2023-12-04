@@ -23,10 +23,21 @@ export default function FooterPage() {
     
     return(
             <footer>
-                <a onClick={(e) => {e.preventDefault(); scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                })}}   className={scroll ? "FlechaUp" : '' } > <i className="fas fa-arrow-up flechaUp"></i></a>
+                <a onClick={(e) => {
+                    e.preventDefault(); 
+                    scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    })
+                }}   
+                className={scroll ? "FlechaUp" : 'FlechaUpOff' } 
+                > 
+                <div>
+                    <i className="fas fa-arrow-up flechaUp">
+                        
+                    </i>
+                </div>
+                </a>
                 <div className="footer-info">
                     <article className="footer-left">
                         <div className="footer-left-logo">

@@ -11,8 +11,10 @@ export default function CardGrid({ data, type = 'movie' }) {
             <div className="cont movie">
                 <div className="parte head">
                     <h1 className="titulo">{data.title}</h1>
-                    <div className="like"><i className="fa-solid fa-heart"></i> {data.likeCount}</div>
-                    <div className="icon-comment"><i className="fa-solid fa-comment"></i> {data.commentCount}</div>
+                    <div className="counter">
+                        <div className="like"><i className="fa-solid fa-heart"></i> {data.likeCount}</div>
+                        <div className="icon-comment"><i className="fa-solid fa-comment"></i> {data.commentCount}</div>
+                    </div>
                 </div>
                 <span className="center rating">
                     <Rating rating={data.rating} />

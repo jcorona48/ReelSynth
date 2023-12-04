@@ -1,0 +1,40 @@
+.container-Studios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-Studios h1{
+    text-align: center;
+    background: linear-gradient(to right,#000000, #000646,#000000);
+    border-radius: 12px;
+    width: 40%;
+    font-size: 32px;
+}
+
+.container-Studios .titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-alert-studios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    cursor: text;
+}
+
+.container-alert-studios h1 {
+    background: linear-gradient(to right,#000000, #A6192E,#000000);
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 790px) {
+    .container-Studios h1{
+        width: 50%;
+    }
+    
+}

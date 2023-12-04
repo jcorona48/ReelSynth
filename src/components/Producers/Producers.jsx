@@ -19,7 +19,7 @@ export default function Producers() {
     return (
         <div className='Producers'>
             <>
-                <h1 id="titulo" style={{ paddingLeft: "10px" }}>Producers</h1>
+                <h1 id="titulo">Producers</h1>
                 {
                     loadingProducers && <h1>Loading...</h1>
                 }

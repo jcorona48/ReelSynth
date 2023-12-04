@@ -1,0 +1,24 @@
+.Mini-Details {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 68%;
+    padding: 20px;
+    gap: 12px;
+}
+
+@media screen and (max-width: 790px) {
+    .Mini-Details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 8px;
+        gap: 8px;
+        margin-bottom: 40px;
+    }
+    
+}

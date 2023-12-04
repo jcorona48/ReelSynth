@@ -2,6 +2,7 @@ import useSEO from "../Hooks/useSEO.jsx";
 import MoviesCards from "../components/Movies/Movies.jsx";
 import SeriesCards from "../components/Series/Series.jsx";
 import Detail from "../components/details/detail.jsx";
+import Studios from "../components/studios/studios.jsx";
 import { useParams } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
@@ -25,6 +26,7 @@ export default function Producer() {
         id
     }
 });
+console.log(producer)
   return (
     <div>
         
@@ -40,6 +42,8 @@ export default function Producer() {
             {
                 producer?.getProducer ? <Detail item={producer?.getProducer} />: <h1>No hay Productora</h1>
             }
+        
+            <Studios input={{producer: id}} />
 
             <MoviesCards input={{producer: id}} />
             

@@ -64,18 +64,17 @@ export default function SignIn(){
     return(
         <div className="form-container sign-in">
             <form onSubmit={handleSubmit} aria-label="Iniciar Sesion" autoSave="off">
-                <h1>Iniciar Sesion</h1>
+                <h1>Sign In</h1>
                 <div className="social-icons">
                     <a href="#" className="icon"><i className="fab fa-google"></i></a>
                     <a href="#" className="icon"><i className="fab fa-facebook"></i></a>
                     <a href="#" className="icon"><i className="fa-brands fa-github"></i></a>
                     <a href="#" className="icon"><i className="fa-brands fa-linkedin-in"></i></a>
                 </div>
-                <span>Inicia Sesion con tu Correo/Usuario y Contraseña</span>
-                <input type="text" placeholder="Correo / Username" name="userName" autoCorrect="off" required />
-                <input type="password" placeholder="Contraseña" name="password" required />
-                <a href="#">Haz olvidado tu Contraseña?</a>
-                <button type="submit">Iniciar Sesion</button>
+                <span>Login with your Email/Username and Password</span>
+                <input type="text" placeholder="Email/Username" name="userName" autoCorrect="off" required />
+                <input type="password" placeholder="Password" name="password" required />
+                <button type="submit">Login</button>
             </form>
         </div>
     )

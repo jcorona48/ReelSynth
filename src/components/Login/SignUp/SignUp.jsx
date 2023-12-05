@@ -70,23 +70,23 @@ export default function SignUp(){
     return(
         <div className="form-container sign-up">
             <form onSubmit={handleSubmit} aria-label="Crear Cuenta" autoSave="off">
-                <h1>Crear Cuenta</h1>
-                <span>Completa el formulario</span>
-                <input name="firstName" type="text" placeholder="Nombre" className="input"/>
-                <input name="lastName" type="text" placeholder="Apellido" className="input"/>
+                <h1>Sign Up</h1>
+                <span>Complete the form</span>
+                <input name="firstName" type="text" placeholder="Name" className="input"/>
+                <input name="lastName" type="text" placeholder="Lastname" className="input"/>
                 <select name="countrys" id="" required className="input" defaultValue="country">
-                    <option disabled value="country" className="country">Selecciona tu pais</option>
+                    <option disabled value="country" className="country">Select your country</option>
                     {
                         countrys.map((country) => (
                             <option key={country.id} value={country.name}>{country.name}</option>
                         ))
                     }
                 </select>
-                <input name="userName" type="text" placeholder="Nombre de Usuario" required className="input"/>
-                <input name="email" type="email" placeholder="Correo Electronico" required className="input"/>
-                <input name="password" type="password" placeholder="Contraseña" required className="input"/>
-                <input name="confirmPassword" type="password" placeholder="Contraseña" required className="input"/>
-                <button type="submit">Registrarse</button>
+                <input name="userName" type="text" placeholder="Username" required className="input"/>
+                <input name="email" type="email" placeholder="Email" required className="input"/>
+                <input name="password" type="password" placeholder="Password" required className="input"/>
+                <input name="confirmPassword" type="password" placeholder="Repeat Password" required className="input"/>
+                <button type="submit">Register</button>
             </form>
         </div>
     )

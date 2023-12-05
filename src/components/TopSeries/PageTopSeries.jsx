@@ -24,7 +24,7 @@ export default function PageTopSeries() {
     const { data: series, loading: loadingSeries, error: errorSeries } = useQuery(query,
         {
             variables: {
-                top: 0
+                top: 8
             }
         });
 

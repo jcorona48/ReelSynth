@@ -55,7 +55,7 @@ export default function FooterPage() {
                             </li>
                         ))
                         }
-                        <a href="mailto:josewx324@gmail.com" className="soport">Contacto</a>
+                        <a href="mailto:josewx324@gmail.com" className="soport">Contact</a>
                     </article>
                     <article className="footer-rigth">
                         <h2>Aids</h2>

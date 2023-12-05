@@ -24,7 +24,7 @@ export default function PageTopMovies() {
     const { data: movies, loading: loadingMovies, error: errorMovies } = useQuery(query,
         {
             variables: {
-                top: 10
+                top: 8
             }
         });
 

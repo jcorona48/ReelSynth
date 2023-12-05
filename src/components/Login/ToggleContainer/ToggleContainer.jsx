@@ -4,21 +4,21 @@ export default function ToggleContainer({ hook }){
                     <div className="toggle-container">
                         <div className="toggle">
                             <div className="toggle-panel toggle-left">
-                                <h1>Bienvenido</h1>
-                                <p>Si ya tienes una cuenta activa puedes iniciar sesion con ella.</p>
+                                <h1>Welcome</h1>
+                                <p>If you already have an active account you can login with it.</p>
                                 <button className="hidden" id="login" onClick={ ()=> {
                                     hook("")
-                                } }>Iniciar Sesion</button>
+                                } }>Login</button>
                             </div>
                             <div className="toggle-panel toggle-right">
-                                <h1>Hola, Ships</h1>
+                                <h1>Hello, Ships</h1>
                                 <p>
-                                    Aun no tienes una cuenta?<br/>
-                                    Puedes crear una ahora mismo
+                                    Do not you have an account yet?<br/>
+                                    You can create one right now
                                 </p>
                                 <button className="hidden" id="register" onClick={ ()=> {
                                     hook("active")
-                                } }>Registrarse</button>
+                                } }>Register</button>
                             </div>
                         </div>
                     </div>

@@ -214,6 +214,14 @@
     transform: translateX(200%);
 }
 
+.hidden:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffff;
+    transition: all 0.6s ease-in-out;
+    
+}
+
 @media screen and (max-width: 790px) {
     .container {
         width: 96%;

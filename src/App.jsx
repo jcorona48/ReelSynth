@@ -53,7 +53,7 @@ function App() {
               <Route path="/studio/:id" element={ <Studio/>} />
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
-              <Route path="/anime" element={ <Anime/>} />
+              <Route path="/animes" element={ <Anime/>} />
               <Route path="/top-animes" element={ <TopAnimes/>} />
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/favorites" element={ <Favorites/>} />

@@ -5,6 +5,7 @@ import Hosts from './Hosts';
 import { useQuery, gql } from "@apollo/client";
 import Like from '../Like/like.jsx';
 import MakeRating from '../Rating/MakeRating.jsx';
+import ButtomEpisode from './ButtomEpisode.jsx';
 
 const query = gql`
     query GetVideos($input: inputVideo) {
@@ -59,10 +60,10 @@ const WatchVideo = ({ type, movie }) => {
         <div className="container-movie-action">
           <h2>{movie?.title}</h2>
           <div className="movie-action">
-            
             <MakeRating movie={movie} type={type} />
             <Like movie={movie} type={type}  />
           </div>
+          <ButtomEpisode />
         </div>
       </div>
     </div>

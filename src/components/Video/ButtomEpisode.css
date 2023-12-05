@@ -1,0 +1,60 @@
+.container-buttomepisode {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttom-episode {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+}
+
+.buttom-episode ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 8px;
+}
+
+.buttom-episode ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    background-color: #005383;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.4s ease-in-out;
+}
+
+.buttom-episode ul li:hover {
+    background-color: #0079b8;
+    border: 1px solid #ffffff;
+    transition: all 0.4s ease-in-out;
+}
+
+.buttom-episode ul li a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 0.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.fa-backward, .fa-send-back, .fa-list, .fa-forward {
+    font-size: 24px;
+}
+

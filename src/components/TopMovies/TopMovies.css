@@ -5,3 +5,73 @@
     border-bottom: 1px solid #fff;
     margin-bottom: 16px;
 }
+
+
+
+/* PageTopMovies */
+
+.Page-Top-Movies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-page-topmovies {
+    width: 80%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 32px;
+    border-radius: 60px;
+    background: linear-gradient(-45deg, #000000 10%, #001174, #000000 90%);
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
+    
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+    
+}
+
+.Page-titulo {
+    background:linear-gradient(to right, transparent 10%, #000000 , transparent 90%);
+    padding: 0 12px;
+    border-radius: 32px;
+    width: 70%;
+    animation: gradient 20s ease infinite;
+    background-size: 400% 400%;
+    font-size: 52px;
+    text-align: center;
+}
+
+.page-topmovies {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    /* background: linear-gradient(to right, #000000 10%, #a38b04 , #000000 90%); */
+    text-align: none;
+}
+
+
+@media screen and (max-width: 790px) {
+    .Page-titulo {
+        width: 100%;
+        font-size: 32px;
+        padding: 0 20px;
+    }
+    
+}
+

@@ -74,22 +74,25 @@ export default function Follow() {
   
 
   return (
-    <div className="Favorites">
-      <div className="Titulo-Favorites">
-        <h1>Favorites</h1>
-      </div>
-     
-      {
-        likes && data?.getLikes && <Cards items={likes}  />
-      }
-
-      {
-        loading && <h1>Loading...</h1>
-      }
-
-      {
-      data?.getLikes && data?.getLikes.length == 0  &&  <div className="alert-movie"><h1>No hay Favorites</h1></div>
-      }
+    <div>
+      <>
+        <main className="Page-Favorites">
+          <articule className="container-page-Favorites">
+            <h1 id="titulo" className="Page-Favorites-titulo">Favorites</h1>
+            <div className="page-favorites">
+              {
+                loading && <h1>Loading...</h1>
+              }
+              {
+                error && <h1>Error...{error.message}</h1>
+              }
+              {
+                likes?.length > 0 ? <Cards items={likes} type="like" /> : <h1>No hay Likes</h1>
+              }
+            </div>
+          </articule>
+        </main>
+      </>
     </div>
   );
 }

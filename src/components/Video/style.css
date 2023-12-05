@@ -73,3 +73,17 @@
     }
     
 }
+
+@media screen and (max-width: 350px) {
+  .watch-video-container .video {
+    padding-top: 86.5%;
+  }
+  
+}
+
+@media screen and (max-width: 390px) {
+  .watch-video-container .video {
+    padding-top: 73.5%;
+  }
+  
+}

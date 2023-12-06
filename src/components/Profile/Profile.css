@@ -123,7 +123,7 @@
     height: 100%;
 }
 
-.perfil-usuario-avatar .boton-avatar {
+.boton-avatar {
     position: absolute;
     left: -2px;
     top: -2px;
@@ -160,9 +160,6 @@
     align-items: flex-start;
     justify-content: center;
     gap: 10px;
-}
-
-.profile-info-user p {
 }
 
 .container-profile p {

@@ -92,7 +92,7 @@ export default function ProfileUser() {
                         <div className="perfil-usuario-portada">
                             <div className="perfil-usuario-avatar">
                                 <img src={user.imgURL || defaultImgUser} alt="img-avatar"/>
-                                <form onSubmit={handleSubmit} className="boton-avatar">
+                                <form onSubmit={handleSubmit} className="boton-avatar" id='boton-avatar'>
                                     <label htmlFor="file"> <i className='fa-regular fa-image'></i></label>
                                     <input  type="file" name="file" id='file' onChange={handleSubmit}></input>
                                 </form>

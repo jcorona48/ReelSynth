@@ -8,6 +8,7 @@ import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
 import SeasonList from "../components/SeasonList/SeasonList";
 import Like from "../components/Like/like";
+import MakeRating from "../components/Rating/MakeRating";
 
 
 const query = gql`
@@ -78,8 +79,9 @@ export default function Serie() {
                         </div>
                         
                         <div style={{width: '100%', maxWidth: '1080px'}}>
-                        <div style={{width: '100px'}} >
+                        <div style={{width: '100px', display: "flex", gap: "30px"}} >
                             <Like movie={serie} type={'Serie'}></Like>
+                            <MakeRating movie={serie} type={`Serie`} />
                         </div>
                             <SeasonList serie={serie} />
                            

@@ -23,7 +23,7 @@
     gap: 8px;
 }
 
-.buttom-episode ul li {
+.back-none, .season-none, .episode-none, .next-none {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -58,3 +58,23 @@
     font-size: 24px;
 }
 
+.fa-backward:hover, .fa-send-back:hover, .fa-list:hover, .fa-forward:hover {
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+.back-none {
+    /* display: none; */
+}
+
+.season-none {
+    /* display: none; */
+}
+
+.episode-none {
+    /* display: none; */
+}
+
+.next-none {
+    /* display: none; */
+}

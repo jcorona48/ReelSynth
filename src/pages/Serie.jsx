@@ -84,7 +84,6 @@ export default function Serie() {
                             <MakeRating movie={serie} type={`Serie`} />
                         </div>
                             <SeasonList serie={serie} />
-                           
                             
                             <Comments movie={serie} type={'Serie'} />
                         </div>

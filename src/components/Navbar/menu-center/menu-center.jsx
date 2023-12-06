@@ -14,10 +14,7 @@ export default function ShowMenuCenter() {
         drop: [
             { label: "Top Series", value: "top-series", icon: "fa-solid fa-fire" } 
         ] },
-        { label: "Animes", value: "animes", icon: "fas fa-solid fa-wand-sparkles",
-        drop: [
-            { label: "Top Animes", value: "top-animes", icon: "fa-solid fa-fire" } 
-        ] },
+        { label: "Animes", value: "animes", icon: "fas fa-solid fa-wand-sparkles" },
         { label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection"},
         { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video"}
     ]) ;

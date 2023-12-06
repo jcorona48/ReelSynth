@@ -2,9 +2,9 @@ import './ButtomEpisode.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function ButtomEpisode({data}) {
-    console.log(data)
+    
     const navigate = useNavigate()
-    const {title,seasonNumber, episodeNumber, serie:seasons, season: episodesCount, episode} = data
+    const {title,seasonNumber, episodeNumber, serie:seasons, season: episodesCount} = data
 
 
 
@@ -20,7 +20,7 @@ export default function ButtomEpisode({data}) {
                                 if(+episodeNumber === 1) return navigate(`/serie/${title}/season/${+seasonNumber - 1}/episode/${episodesCount}`)
 
 
-                                 navigate(`/serie/${title}/season/${seasonNumber}/episode/${+episodeNumber - 1}`)
+                                navigate(`/serie/${title}/season/${seasonNumber}/episode/${+episodeNumber - 1}`)
 
 
                         }}><i className='fa-solid fa-backward'/><a href="#">Back</a></li> 

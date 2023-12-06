@@ -22,7 +22,6 @@ import Studio from './pages/Studio'
 import Footer from './components/Footer/footer'
 import TopMovies from './pages/TopMovies'
 import TopSeries from './pages/TopSeries'
-import TopAnimes from './pages/TopAnimes'
 import { useContext } from 'react'
 import { AlertsContext } from './Context/alertContext'
 import Alert from './components/Alert/Alert'
@@ -54,7 +53,6 @@ function App() {
               <Route path="/producers" element={ <Producers/>} />
               <Route path="/login" element={ <LoginPage/>} />
               <Route path="/animes" element={ <Anime/>} />
-              <Route path="/top-animes" element={ <TopAnimes/>} />
               <Route path="/profile" element={ <Profile/>} />
               <Route path="/favorites" element={ <Favorites/>} />
               <Route path="/search/:title" element={<Search />} />

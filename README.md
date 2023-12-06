@@ -14,7 +14,7 @@
 - ¡Totalmente gratuito!
 
 ## Capturas de Pantalla
-Añade capturas de pantalla de tu aplicación aquí si lo deseas.
+![Captura de Pantalla](https://res.cloudinary.com/db0ahcf7o/image/upload/v1701871094/zaouezueniiegx9wkj4s.png)
 
 ## Cómo Contribuir
 1. ¡Clona el repositorio!

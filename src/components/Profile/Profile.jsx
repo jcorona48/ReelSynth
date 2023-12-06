@@ -1,4 +1,4 @@
-import './profile.css'
+import './Profile.css'
 import { useContext, useEffect } from 'react';
 import { UserContext } from '../../Context/userContext.jsx'
 import { useMutation, gql } from '@apollo/client';

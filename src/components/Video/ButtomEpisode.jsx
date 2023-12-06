@@ -23,17 +23,17 @@ export default function ButtomEpisode({data}) {
                                 navigate(`/serie/${title}/season/${seasonNumber}/episode/${+episodeNumber - 1}`)
 
 
-                        }}><i className='fa-solid fa-backward'/><a href="#">Back</a></li> 
+                        }}><i className='fa-solid fa-backward'/>Back</li> 
                         <li className='season-none'
                             onClick={() => {
                                 navigate(`/serie/${title}`)
                             }}
-                        ><i className='fa-regular fa-send-back'/><a href="#">All Season</a></li>
+                        ><i className='fa-regular fa-send-back'/>All Season</li>
                         <li className='episode-none'
                             onClick={() => {
                                 navigate(`/serie/${title}/season/${seasonNumber}`)
                             }}
-                        ><i className='fa-regular fa-list'/><a href="#">All Episode</a></li>
+                        ><i className='fa-regular fa-list'/>All Episode</li>
                         <li className='next-none'
                             onClick={() => {
                                 if(+episodeNumber === episodesCount && +seasonNumber === seasons) return;
@@ -41,7 +41,7 @@ export default function ButtomEpisode({data}) {
                                 if(+episodeNumber === episodesCount) return navigate(`/serie/${title}/season/${+seasonNumber + 1}/episode/1`)
                                 navigate(`/serie/${title}/season/${seasonNumber}/episode/${+episodeNumber + 1}`)
                             }}
-                        ><i className='fa-solid fa-forward'/><a href="#">Next</a></li>
+                        ><i className='fa-solid fa-forward'/>Next</li>
                     </ul>
                 </div>
             </div>

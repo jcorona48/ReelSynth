@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import useSEO from "../Hooks/useSEO";
 import { UserContext } from "../Context/userContext";
-import { gql, useQuery } from "@apollo/client";
+import { gql, useQuery, useApolloClient } from "@apollo/client";
 import "../components/Favorite/style.css";
 import Cards from "../components/Cards/Cards.jsx";
 import { AlertsContext } from "../Context/alertContext.jsx";
@@ -33,6 +33,13 @@ const query = gql`
 
 export default function Follow() {
   
+  const client = useApolloClient();
+
+  useEffect(() => {
+    // Limpiar la caché al montar el componente
+    client.resetStore();
+  }, [client]);
+  
   useSEO({ title: "Favorites", description: "Favorites page" });
 
   const { token } = useContext(UserContext)
@@ -53,7 +60,7 @@ export default function Follow() {
       headers:{
         'x-token': token
       }
-    }
+    },
   });
   
   useEffect(() => {

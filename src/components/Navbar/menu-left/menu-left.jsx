@@ -17,7 +17,7 @@ export default function ShowMenuLeft(){
         { label: "Top Movies", value: "top-movies", icon: "fa-solid fa-fire" },
         { label: "Series", value: "series", icon: "fas fa-tv" },
         { label: "Top Series", value: "top-series", icon: "fa-solid fa-fire" },
-        { label: "Anime", value: "anime", icon: "fas fa-solid fa-wand-sparkles" },
+        { label: "Anime", value: "animes", icon: "fas fa-solid fa-wand-sparkles" },
         { label: "Genrers", value: "genrers", icon: "fa-solid fa-album-collection" },
         { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video" },
         { label: "About", value: "about", icon: "fa-solid fa-circle-info" }

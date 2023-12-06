@@ -1,5 +1,5 @@
 import { useEffect, useState,useMemo } from "react";
-import "./Footer.css"
+import "./footer.css"
 import { company } from "../../../config/defaultconfig";
 import { Link } from "react-router-dom";
 

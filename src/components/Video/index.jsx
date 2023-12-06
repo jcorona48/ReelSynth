@@ -39,7 +39,7 @@ const WatchVideo = ({ type, movie }) => {
     }
 })
 
-
+  console.log(type)
   useEffect( () =>{
     if(data && data?.getVideos){
       setVideos(data?.getVideos)
@@ -57,14 +57,7 @@ const WatchVideo = ({ type, movie }) => {
       <div className="watch-video">
         <Hosts videos={videos} setVideo={setVideo} />
         <div className="video">{Parse(video.url)}</div>
-        <div className="container-movie-action">
-          <h2>{movie?.title}</h2>
-          <div className="movie-action">
-            <MakeRating movie={movie} type={type} />
-            <Like movie={movie} type={type}  />
-          </div>
-          <ButtomEpisode />
-        </div>
+        
       </div>
     </div>
       )

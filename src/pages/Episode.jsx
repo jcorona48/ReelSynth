@@ -6,7 +6,10 @@ import { useEffect, useState } from "react";
 import TopSeries from "../components/TopSeries/TopSeries";
 import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
+import ButtomEpisode from "../components/Video/ButtomEpisode";
 import WatchVideo from "../components/Video"
+import MakeRating from "../components/Rating/MakeRating";
+import Like from "../components/Like/like";
 
 const query = gql`
     query GetSeries($input: inputSerie) {
@@ -140,9 +143,20 @@ export default function Episode() {
                                 <>
                                     {
                                         episode ? (
-                                            <div style={{ width: '100%', maxWidth: '1080px' }}>
+                                            <div style={{ width: '100%', maxWidth: '1080px', display: 'flex', flexDirection: 'column' }}>
+                                                
                                                 <h1 className="Titulo-number-episode">Episodio {episode.number}</h1>
                                                 <WatchVideo movie={episode} type={'Episode'} />
+                                                <div className="container-movie-action">
+                                                    <h2>{episode?.title}</h2>
+                                                        <div className="movie-action">
+                                                        <ButtomEpisode data={{serie, season, seasonNumber, episode, episodeNumber, title  }} />
+                                                    <MakeRating movie={serie} type={`Serie`} />
+                                                    <Like movie={serie} type={`Serie`}  />
+                                                    </div>
+                                                </div>
+                                
+                                                
                                                 <Comments movie={episode} type={'Episode'} />
                                             </div>
                                         ) :

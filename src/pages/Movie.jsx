@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import TopMovies from "../components/TopMovies/TopMovies";
 import CardGrid from "../components/CardGrid/";
 import Comments from "../components/Comments";
+import MakeRating from "../components/Rating/MakeRating";
+import Like from "../components/Like/like";
 const query = gql`
     query GetMovies($input: inputMovie) {
     getMovies(input: $input) {
@@ -72,8 +74,17 @@ export default function Movie(){
                                 <CardGrid data={movie} />
                                 <TopMovies />
                         </div>
-                        <WatchVideo movie={movie} type={'Movie'} />
+                        
+                        
                         <div style={{width: '100%', maxWidth: '1080px'}} className="comments">
+                        <WatchVideo movie={movie} type={'Movie'} />
+                        <div className="container-movie-action">
+                                                    <h2>{movie?.title}</h2>
+                                                        <div className="movie-action">
+                                                    <MakeRating movie={movie} type={`Movie`} />
+                                                    <Like movie={movie} type={`Movie`}  />
+                                                    </div>
+                                                </div>
                             <Comments movie={movie} type={'Movie'} />
                         </div>
                         

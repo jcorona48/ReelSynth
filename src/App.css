@@ -5,7 +5,22 @@
     min-height: 100vh;
 }
 
+.movie-action {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+  }
 
+  .container-movie-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 15px;
+    flex-direction: row;
+    width: 100%;
+    gap: 60px;
+  }
 #body{
     flex: 1;
     display: flex;

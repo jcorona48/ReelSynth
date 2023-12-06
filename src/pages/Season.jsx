@@ -107,8 +107,8 @@ export default function Season() {
                             
                             {
                                 season ? <> 
-                                            <div style={{width: '100px'}} >
-                                                <Like movie={season} type={'Season'}></Like>
+                                            <div style={{width: '100px', display: "flex", gap: "30px"}} >
+                                                <Like movie={serie} type={'Serie'}></Like>
                                                 <MakeRating movie={serie} type={`Serie`} />
                                             </div>
                                             <EpisodeList season={season} />

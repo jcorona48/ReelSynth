@@ -16,7 +16,7 @@ export default function ShowMenuCenter() {
         ] },
         { label: "Animes", value: "animes", icon: "fas fa-solid fa-wand-sparkles" },
         { label: "Genres", value: "genrers", icon: "fa-solid fa-album-collection"},
-        { label: "Producer", value: "producers", icon: "fa-solid fa-circle-video"}
+        { label: "Producers", value: "producers", icon: "fa-solid fa-circle-video"}
     ]) ;
 
     const [openDropdown, setOpenDropdown] = useState(null);

@@ -13,9 +13,7 @@
     background-color: #003a61;
     border-radius: 12px;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 16px;
     width: 100%;
     height: fit-content;
@@ -52,3 +50,5 @@
     color: #003a61;
     font-size: 20px;
 }
+
+

@@ -29,7 +29,7 @@ export default function EpisodeList({season}) {
         }
     
     })
-    console.log(season)
+    
     return (
         <div className='SeasonList'>
             <>

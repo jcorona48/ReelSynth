@@ -63,11 +63,24 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 10%;
+  width: 20%;
 }
 
 .footer-rigth ul {
   list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.footer-rigth ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-rigth ul li a{
@@ -101,6 +114,19 @@ footer {
     padding: 0 30px;
     transition: 0.5s all ease-in-out;
     width: fit-content;
+}
+
+.fa-github {
+    color: #ffff;
+    font-size: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.repost-git {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: right;
 }
 
 .FlechaUp {/* Oculta la flecha inicialmente */

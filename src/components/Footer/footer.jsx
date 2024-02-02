@@ -61,6 +61,8 @@ export default function FooterPage() {
                         <h2>Aids</h2>
                         <ul>
                             <li><a href="/" className="soport">Home</a></li>
+                            <li><a href="https://github.com/JeyllonSandoval/Proyecto-Ing.Software.git" className="repost-git soport">Back-End</a><i className="fa-brands fa-github"></i></li>
+                            <li><a href="https://github.com/jcorona48/ReelSynth" className="repost-git soport">Front-End</a><i className="fa-brands fa-github"></i></li>
                         </ul>
                     </article>
                 </div>
